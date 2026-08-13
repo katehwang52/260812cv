@@ -1,217 +1,1569 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tech Recruiting, Career Coaching, Community, AI Education 경험을 담은 공개 웹 이력서" />
-  <title>Kate Hwang | Resume</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="hero">
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="#top">Kate Hwang</a>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#skills">Skills</a>
-        </div>
-      </nav>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <section class="hero-content" id="top">
-        <p class="eyebrow">TECH · CAREER · COMMUNITY · AI EDUCATION</p>
-        <h1>사람과 기술 사이를 연결하는<br />커리어·교육 실무자</h1>
-        <p class="hero-copy">
-          테크 채용, 커리어 코칭, 커뮤니티 운영, AI·디지털 교육 경험을 바탕으로
-          사람의 가능성을 발견하고 실제 기회와 학습 경험으로 연결합니다.
-        </p>
-        <div class="hero-tags">
-          <span>Tech Recruiting</span>
-          <span>Career Coaching</span>
-          <span>Community</span>
-          <span>AI Education</span>
-        </div>
-      </section>
+  <meta
+    name="description"
+    content="AI 시대의 진로와 직무를 교육하는 Kate Hwang의 강의·커리어·테크 커뮤니티 포트폴리오"
+  >
+
+  <title>Kate Hwang | AI Career & Tech Education</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Pretendard,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: #111827;
+      background: #ffffff;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* NAV */
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .nav-contact {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #111827;
+      color: white !important;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 115px 0 100px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 20%, #dbeafe 0, transparent 27%),
+        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    }
+
+    .eyebrow,
+    .section-kicker {
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin-top: 22px;
+      max-width: 920px;
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -.055em;
+      font-weight: 850;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
+    }
+
+    .hero-copy {
+      margin-top: 30px;
+      max-width: 760px;
+      font-size: 20px;
+      color: #4b5563;
+      line-height: 1.75;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .button-primary {
+      color: #fff;
+      background: #2563eb;
+    }
+
+    .button-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      border: 1px solid #d1d5db;
+      background: white;
+    }
+
+    .button-secondary:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+    .hero-keywords {
+      margin-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-keywords span {
+      padding: 8px 13px;
+      background: rgba(255,255,255,.75);
+      border: 1px solid #dbe2ea;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    /* COMMON */
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-alt {
+      background: #f7f9fc;
+    }
+
+    .section-title {
+      margin-top: 12px;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.2;
+      letter-spacing: -.04em;
+    }
+
+    .section-description {
+      margin-top: 18px;
+      max-width: 720px;
+      color: #6b7280;
+      font-size: 17px;
+    }
+
+    /* IMPACT */
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #d1d5db;
+      border-bottom: 1px solid #d1d5db;
+    }
+
+    .impact-item {
+      padding: 45px 32px;
+      border-right: 1px solid #d1d5db;
+    }
+
+    .impact-item:last-child {
+      border-right: 0;
+    }
+
+    .impact-number {
+      display: block;
+      font-size: 42px;
+      line-height: 1;
+      color: #2563eb;
+      font-weight: 850;
+      letter-spacing: -.04em;
+    }
+
+    .impact-label {
+      display: block;
+      margin-top: 13px;
+      color: #4b5563;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .about-copy {
+      font-size: 18px;
+      color: #374151;
+    }
+
+    .about-copy p + p {
+      margin-top: 22px;
+    }
+
+    .expertise-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .expertise {
+      padding: 20px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+    }
+
+    .expertise strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .expertise span {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* SPEAKING */
+
+    .speaking-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 50px;
+    }
+
+    .speaking-head .section-description {
+      max-width: 520px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid #e5e7eb;
+      background: white;
+      transition: .25s ease;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 50px rgba(15,23,42,.09);
+    }
+
+    .portfolio-image {
+      height: 360px;
+      overflow: hidden;
+      background: #eef2f7;
+    }
+
+    .portfolio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .35s ease;
+    }
+
+    .portfolio-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .portfolio-body {
+      padding: 28px;
+    }
+
+    .portfolio-label {
+      margin-bottom: 10px;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    .portfolio-body h3 {
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: -.025em;
+    }
+
+    .portfolio-body p {
+      margin-top: 12px;
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .portfolio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .portfolio-tags span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* CLIENTS */
+
+    .organization-box {
+      margin-top: 75px;
+      padding-top: 40px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .organization-title {
+      margin-bottom: 25px;
+      color: #6b7280;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .organization-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 32px;
+      align-items: center;
+    }
+
+    .organization-list span {
+      font-size: 20px;
+      font-weight: 800;
+      color: #374151;
+      letter-spacing: -.03em;
+    }
+
+    /* DEVCHAT */
+
+    .devchat {
+      color: white;
+      background: #0d1117;
+    }
+
+    .devchat .section-kicker {
+      color: #60a5fa;
+    }
+
+    .devchat-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .devchat h2 {
+      margin-top: 12px;
+      font-size: clamp(40px, 5vw, 62px);
+      letter-spacing: -.05em;
+    }
+
+    .devchat-role {
+      margin-top: 10px;
+      color: #60a5fa;
+      font-weight: 700;
+    }
+
+    .devchat-copy {
+      margin-top: 26px;
+      color: #cbd5e1;
+      font-size: 17px;
+    }
+
+    .devchat-points {
+      margin-top: 30px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .devchat-point {
+      padding: 14px 17px;
+      border: 1px solid #2a3441;
+      border-radius: 10px;
+      color: #dbe4ef;
+      background: #161b22;
+    }
+
+    .devchat-photo {
+      overflow: hidden;
+      border-radius: 18px;
+      background: #161b22;
+    }
+
+    .devchat-photo img {
+      aspect-ratio: 1.35;
+      object-fit: cover;
+    }
+
+    .photo-caption {
+      padding: 13px 16px;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    /* PROGRAMS */
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 50px;
+    }
+
+    .program-card {
+      min-height: 310px;
+      padding: 32px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background: white;
+    }
+
+    .program-number {
+      font-size: 13px;
+      color: #2563eb;
+      font-weight: 800;
+    }
+
+    .program-card h3 {
+      margin-top: 16px;
+      font-size: 23px;
+      line-height: 1.35;
+      letter-spacing: -.025em;
+    }
+
+    .program-card p {
+      margin-top: 14px;
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .program-card ul {
+      margin-top: 20px;
+      padding-left: 18px;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    .program-card li + li {
+      margin-top: 7px;
+    }
+
+    /* CAREER */
+
+    .career-grid {
+      display: grid;
+      gap: 0;
+      margin-top: 50px;
+      border-top: 1px solid #d1d5db;
+    }
+
+    .career-item {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 50px;
+      padding: 38px 0;
+      border-bottom: 1px solid #d1d5db;
+    }
+
+    .career-meta strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .career-meta span {
+      display: block;
+      margin-top: 5px;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    .career-content h3 {
+      font-size: 22px;
+    }
+
+    .career-content p {
+      margin-top: 10px;
+      max-width: 760px;
+      color: #6b7280;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #eff6ff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      margin-top: 12px;
+      font-size: clamp(38px, 4.5vw, 58px);
+      line-height: 1.2;
+      letter-spacing: -.045em;
+    }
+
+    .contact-copy {
+      margin-top: 20px;
+      color: #4b5563;
+      font-size: 17px;
+    }
+
+    .contact-form {
+      padding: 38px;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 20px 60px rgba(30,64,175,.08);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      border: 1px solid #d1d5db;
+      border-radius: 9px;
+      background: #fff;
+      outline: none;
+      padding: 13px 14px;
+      color: #111827;
+      transition: .2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,.09);
+    }
+
+    .form-group textarea {
+      min-height: 170px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      width: 100%;
+      border: 0;
+      min-height: 54px;
+      border-radius: 9px;
+      background: #2563eb;
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background: #1d4ed8;
+    }
+
+    .form-note {
+      margin-top: 12px;
+      color: #9ca3af;
+      font-size: 12px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+      color: #6b7280;
+      font-size: 13px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.nav-contact) {
+        display: none;
+      }
+
+      .hero {
+        padding: 85px 0 75px;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .impact-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .impact-item:nth-child(-n+2) {
+        border-bottom: 1px solid #d1d5db;
+      }
+
+      .about-grid,
+      .devchat-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .career-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .speaking-head {
+        display: block;
+      }
+
+      .portfolio-image {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 30px, 1180px);
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero-copy {
+        font-size: 17px;
+      }
+
+      .impact-item {
+        padding: 30px 18px;
+      }
+
+      .impact-number {
+        font-size: 34px;
+      }
+
+      .expertise-list {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .contact-form {
+        padding: 25px;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="#top">Kate Hwang</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#speaking">Speaking</a>
+        <a href="#devchat">Community</a>
+        <a href="#programs">Programs</a>
+        <a href="#contact" class="nav-contact">강의 문의</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- HERO -->
+
+  <header class="hero" id="top">
+    <div class="container">
+
+      <p class="eyebrow">
+        AI CAREER · TECH EDUCATION · COMMUNITY
+      </p>
+
+      <h1>
+        AI 시대의<br>
+        <span>진로와 직무</span>를 가르칩니다.
+      </h1>
+
+      <p class="hero-copy">
+        테크 리크루팅 현장에서 얻은 채용 시장의 인사이트와
+        대학·부트캠프·개발자 커뮤니티에서 쌓은 교육 경험을 바탕으로,
+        변화하는 기술과 직업을 학습자의 언어로 연결합니다.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="button button-primary">
+          강의·교육 문의
+        </a>
+
+        <a href="#speaking" class="button button-secondary">
+          강연 포트폴리오 보기
+        </a>
+      </div>
+
+      <div class="hero-keywords">
+        <span>AI Career Education</span>
+        <span>Tech Recruiting</span>
+        <span>Developer Career</span>
+        <span>Career Coaching</span>
+        <span>Generative AI</span>
+        <span>Community</span>
+      </div>
+
     </div>
   </header>
 
+
   <main>
+
+    <!-- IMPACT -->
+
+    <section>
+      <div class="container impact-grid">
+
+        <div class="impact-item">
+          <span class="impact-number">3,000+</span>
+          <span class="impact-label">Career Coaching</span>
+        </div>
+
+        <div class="impact-item">
+          <span class="impact-number">500+</span>
+          <span class="impact-label">Largest Offline Lecture</span>
+        </div>
+
+        <div class="impact-item">
+          <span class="impact-number">280+</span>
+          <span class="impact-label">Tech Candidate Interviews</span>
+        </div>
+
+        <div class="impact-item">
+          <span class="impact-number">10yr+</span>
+          <span class="impact-label">Career & Education Experience</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
     <section class="section" id="about">
-      <div class="container two-column">
+      <div class="container about-grid">
+
         <div>
           <p class="section-kicker">ABOUT</p>
-          <h2>경험을 연결해<br />새로운 역할을 만듭니다.</h2>
+
+          <h2 class="section-title">
+            기술을 설명하는 것보다<br>
+            기술이 바꾸는 일을<br>
+            설명합니다.
+          </h2>
         </div>
+
         <div class="about-copy">
+
           <p>
-            스타트업 마케팅, 이공계 청년 진로·취업 교육, 개발자 커리어 코칭,
-            외국계 서치펌의 테크 채용까지 다양한 현장에서 사람과 조직을 연결해 왔습니다.
+            대학 진로취업 현장부터 개발자 부트캠프,
+            글로벌 서치펌의 테크 채용까지
+            오랫동안 사람의 커리어와 직업 변화를 가까이에서 다뤄왔습니다.
           </p>
+
           <p>
-            최근에는 기존 교육 경험을 AI·디지털 교육 분야로 확장하며
-            초·중·고 학습자를 대상으로 한 생성형 AI, Python, 블록코딩 수업을 준비하고 있습니다.
+            현재는 그 경험을 바탕으로 AI 시대의 직무 변화,
+            개발자 채용 트렌드, 커리어 설계와 생성형 AI 활용을
+            연결한 진로·직무 교육을 설계하고 있습니다.
           </p>
+
           <p>
-            강의, 채용, 커뮤니티 운영처럼 서로 다른 업무를 해왔지만,
-            공통적으로 복잡한 정보를 정리하고 상대의 눈높이에 맞게 전달하며
-            실행까지 연결하는 역할을 맡아왔습니다.
+            단순히 AI 도구 사용법을 알려주는 교육보다
+            <strong>“AI로 일이 어떻게 변하고 있고,
+            나는 무엇을 준비해야 하는가”</strong>를
+            이해하고 실제 행동으로 연결하는 교육을 지향합니다.
           </p>
+
+          <div class="expertise-list">
+
+            <div class="expertise">
+              <strong>AI & Tech Career</strong>
+              <span>AI 시대 직무 변화와 채용 트렌드</span>
+            </div>
+
+            <div class="expertise">
+              <strong>Career Education</strong>
+              <span>대학생·취준생·주니어 직무 교육</span>
+            </div>
+
+            <div class="expertise">
+              <strong>Tech Recruiting</strong>
+              <span>개발자 채용시장 및 기업 평가 기준</span>
+            </div>
+
+            <div class="expertise">
+              <strong>Generative AI</strong>
+              <span>생성형 AI 활용 및 디지털 리터러시</span>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section alt" id="experience">
-      <div class="container">
-        <p class="section-kicker">EXPERIENCE</p>
-        <h2>주요 경력</h2>
 
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <span>Robert Walters Korea</span>
+    <!-- SPEAKING -->
+
+    <section class="section section-alt" id="speaking">
+      <div class="container">
+
+        <div class="speaking-head">
+
+          <div>
+            <p class="section-kicker">SPEAKING & EDUCATION</p>
+
+            <h2 class="section-title">
+              현장에서 만난<br>
+              학생과 개발자들
+            </h2>
+          </div>
+
+          <p class="section-description">
+            대학, 글로벌 테크 기업, 개발자 커뮤니티 등에서
+            AI·Tech 커리어, 개발자 취업, 직무 탐색을 주제로
+            강연과 교육을 진행해 왔습니다.
+          </p>
+
+        </div>
+
+
+        <div class="portfolio-grid">
+
+          <!-- GOOGLE / MICROSOFT -->
+
+          <article class="portfolio-card">
+
+            <div class="portfolio-image">
+              <img
+                src="images/gdg-ai-career.png"
+                alt="Google Developer Group Build with AI 커리어 강연"
+              >
             </div>
-            <div class="timeline-content">
+
+            <div class="portfolio-body">
+
+              <p class="portfolio-label">
+                GOOGLE DEVELOPER GROUP · MICROSOFT
+              </p>
+
+              <h3>
+                AI가 개발자를 대체할 수 있을까?
+              </h3>
+
+              <p>
+                AI 시대 개발자 채용 시장의 변화와
+                앞으로 요구되는 역량을 주제로
+                개발자와 취업 준비생을 위한 커리어 세션을 진행했습니다.
+              </p>
+
+              <div class="portfolio-tags">
+                <span>AI Career</span>
+                <span>Developer</span>
+                <span>Tech Recruiting</span>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- SEOUL NATIONAL UNIVERSITY -->
+
+          <article class="portfolio-card">
+
+            <div class="portfolio-image">
+              <img
+                src="images/snu-career.jpg"
+                alt="서울대학교 개발자 커리어 세션"
+              >
+            </div>
+
+            <div class="portfolio-body">
+
+              <p class="portfolio-label">
+                SEOUL NATIONAL UNIVERSITY
+              </p>
+
+              <h3>
+                From Code to Product
+              </h3>
+
+              <p>
+                서울대학교 CS 커뮤니티를 대상으로
+                개발 경험과 프로젝트를 기업이 이해하는 언어로 바꾸고
+                커리어 경쟁력으로 연결하는 세션을 진행했습니다.
+              </p>
+
+              <div class="portfolio-tags">
+                <span>Career Strategy</span>
+                <span>Computer Science</span>
+                <span>Portfolio</span>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- UNIVERSITY -->
+
+          <article class="portfolio-card">
+
+            <div class="portfolio-image">
+              <img
+                src="images/university-metaverse.jpg"
+                alt="한국공학대학교 진로취업 교육 프로그램"
+              >
+            </div>
+
+            <div class="portfolio-body">
+
+              <p class="portfolio-label">
+                UNIVERSITY CAREER EDUCATION
+              </p>
+
+              <h3>
+                이공계 청년 진로·취업 교육
+              </h3>
+
+              <p>
+                한국공학대학교, 호서대학교, 안산대학교 등에서
+                이공계 학생을 대상으로 직무 탐색, 취업 전략,
+                자기소개서, 면접, 커리어 설계 교육을 진행했습니다.
+              </p>
+
+              <div class="portfolio-tags">
+                <span>한국공학대학교</span>
+                <span>호서대학교</span>
+                <span>안산대학교</span>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- DEVCHAT -->
+
+          <article class="portfolio-card">
+
+            <div class="portfolio-image">
+              <img
+                src="images/devchat-cio.jpg"
+                alt="Devchat Night 개발자 커뮤니티 행사"
+              >
+            </div>
+
+            <div class="portfolio-body">
+
+              <p class="portfolio-label">
+                DEVCHAT KOREA
+              </p>
+
+              <h3>
+                개발자와 기술 리더의 대화를 설계하다
+              </h3>
+
+              <p>
+                DevRel과 AI 시대의 조직 문화를 주제로 한
+                개발자 커뮤니티 행사의 기획·운영과
+                패널 모더레이션을 진행했습니다.
+              </p>
+
+              <div class="portfolio-tags">
+                <span>DevRel</span>
+                <span>Moderation</span>
+                <span>Community</span>
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+
+
+        <div class="organization-box">
+
+          <p class="organization-title">
+            SPEAKING · EDUCATION · COMMUNITY EXPERIENCE
+          </p>
+
+          <div class="organization-list">
+            <span>Google</span>
+            <span>Microsoft</span>
+            <span>서울대학교</span>
+            <span>한국공학대학교</span>
+            <span>호서대학교</span>
+            <span>안산대학교</span>
+            <span>Devchat Korea</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- DEVCHAT -->
+
+    <section class="section devchat" id="devchat">
+      <div class="container devchat-grid">
+
+        <div>
+
+          <p class="section-kicker">
+            COMMUNITY LEADERSHIP
+          </p>
+
+          <h2>Devchat Korea</h2>
+
+          <p class="devchat-role">
+            Organizer · Ops & Partnerships
+          </p>
+
+          <p class="devchat-copy">
+            한국 DevRel 커뮤니티 Devchat의 운영진으로 활동하며
+            개발자와 기술 리더가 연결되는 행사를
+            함께 기획하고 운영하고 있습니다.
+          </p>
+
+          <p class="devchat-copy">
+            커뮤니티에서 만나는 개발자와 기업의 이야기는
+            AI·Tech 채용 시장의 변화를 가장 가까이에서
+            이해할 수 있는 현장이기도 합니다.
+          </p>
+
+          <div class="devchat-points">
+
+            <div class="devchat-point">
+              Anthropic이 함께한 개발자 커뮤니티 행사 운영
+            </div>
+
+            <div class="devchat-point">
+              Notion이 함께한 Devchat Night 행사 운영
+            </div>
+
+            <div class="devchat-point">
+              Devchat Night 2025 · 2026 패널 모더레이션
+            </div>
+
+            <div class="devchat-point">
+              연사 · 스폰서 · 파트너 · 행사 운영 커뮤니케이션
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="devchat-photo">
+
+          <img
+            src="images/devchat-cio.jpg"
+            alt="Devchat Night 패널 토크"
+          >
+
+          <p class="photo-caption">
+            Devchat Night · CIO Korea
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROGRAMS -->
+
+    <section class="section section-alt" id="programs">
+      <div class="container">
+
+        <p class="section-kicker">
+          EDUCATION PROGRAMS
+        </p>
+
+        <h2 class="section-title">
+          이런 교육을 함께할 수 있습니다.
+        </h2>
+
+        <p class="section-description">
+          학교·대학교·교육기관·커뮤니티의 대상과 목적에 맞춰
+          특강부터 프로젝트형 수업까지 구성합니다.
+        </p>
+
+
+        <div class="program-grid">
+
+          <article class="program-card">
+
+            <span class="program-number">01</span>
+
+            <h3>
+              AI 시대 진로·직무 특강
+            </h3>
+
+            <p>
+              AI가 직업과 일하는 방식을 어떻게 바꾸고 있는지 이해하고
+              자신의 진로와 연결하는 교육입니다.
+            </p>
+
+            <ul>
+              <li>AI 시대 직무 변화</li>
+              <li>미래 역량 탐색</li>
+              <li>생성형 AI 활용</li>
+              <li>대학생·청소년 진로 교육</li>
+            </ul>
+
+          </article>
+
+
+          <article class="program-card">
+
+            <span class="program-number">02</span>
+
+            <h3>
+              AI·Tech 취업 전략
+            </h3>
+
+            <p>
+              실제 테크 채용 현장에서 얻은 인사이트를 바탕으로
+              개발자와 이공계 인재의 취업 전략을 다룹니다.
+            </p>
+
+            <ul>
+              <li>AI 채용시장 트렌드</li>
+              <li>JD 분석</li>
+              <li>이력서·포트폴리오</li>
+              <li>면접 및 퍼스널 브랜딩</li>
+            </ul>
+
+          </article>
+
+
+          <article class="program-card">
+
+            <span class="program-number">03</span>
+
+            <h3>
+              AI·디지털 프로젝트 교육
+            </h3>
+
+            <p>
+              생성형 AI와 코딩을 활용해
+              학생이 직접 탐구하고 결과물을 만드는 프로젝트형 수업입니다.
+            </p>
+
+            <ul>
+              <li>Generative AI</li>
+              <li>Python</li>
+              <li>Entry Block Coding</li>
+              <li>PBL · Digital Citizenship</li>
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CAREER -->
+
+    <section class="section" id="career">
+      <div class="container">
+
+        <p class="section-kicker">
+          EXPERIENCE
+        </p>
+
+        <h2 class="section-title">
+          Career Journey
+        </h2>
+
+
+        <div class="career-grid">
+
+          <article class="career-item">
+
+            <div class="career-meta">
+              <strong>Robert Walters Korea</strong>
+              <span>2024 — 2026</span>
+            </div>
+
+            <div class="career-content">
               <h3>Candidate Manager, Technology</h3>
+
               <p>
-                백엔드, 프론트엔드, DevOps, ML/AI 등 테크 직군의 후보자 발굴과 인터뷰,
-                채용 프로젝트 운영을 담당했습니다.
+                Backend, Frontend, DevOps, ML/AI 등
+                테크 직군의 후보자 인터뷰, Talent Mapping,
+                채용시장 분석 및 채용 프로젝트를 담당했습니다.
               </p>
-              <ul>
-                <li>테크 후보자 280명+ 인터뷰</li>
-                <li>누적 Placement 19건</li>
-                <li>누적 Fee 약 5.1억 원</li>
-                <li>주간 80~100개 Live Hiring Project 대응</li>
-                <li>2025 Q2·Q3 Top Sourcerer 수상</li>
-              </ul>
             </div>
+
           </article>
 
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <strong>Career Coaching</strong>
-              <span>Code States 외</span>
+
+          <article class="career-item">
+
+            <div class="career-meta">
+              <strong>Code States</strong>
+              <span>2022 — 2023</span>
             </div>
-            <div class="timeline-content">
-              <h3>Career Coach / Instructor</h3>
+
+            <div class="career-content">
+              <h3>Career Coach</h3>
+
               <p>
-                개발자·이공계 청년을 대상으로 취업 전략, 이력서, 면접, 커리어 설계 교육과
-                1:1 코칭을 진행했습니다.
+                K-Digital Training 개발자 교육과 연계하여
+                이력서, 포트폴리오, 면접, 커리어 설계 프로그램과
+                1:1 코칭을 운영했습니다.
               </p>
-              <ul>
-                <li>누적 코칭 3,000명+</li>
-                <li>이공계 청년층 대상 진로·취업 강의</li>
-                <li>최대 500명 규모 오프라인 실강의 경험</li>
-                <li>대상과 상황에 맞춘 강의 운영 및 돌발상황 대응</li>
-              </ul>
             </div>
+
           </article>
 
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <strong>Community</strong>
-              <span>Devchat Korea</span>
+
+          <article class="career-item">
+
+            <div class="career-meta">
+              <strong>University Career Education</strong>
+              <span>2016 — 2022</span>
             </div>
-            <div class="timeline-content">
-              <h3>Organizer · Ops & Partnerships</h3>
+
+            <div class="career-content">
+              <h3>Career Consultant · Instructor</h3>
+
               <p>
-                개발자 커뮤니티 행사 기획과 운영, 스폰서·연사·파트너 커뮤니케이션,
-                현장 진행 및 모더레이션을 담당했습니다.
+                한국공학대학교, 호서대학교, 안산대학교 등
+                대학 현장에서 이공계 청년의 진로·취업 프로그램,
+                채용박람회 및 커리어 교육을 운영했습니다.
               </p>
-              <ul>
-                <li>100명+ 규모 프라이빗 테크 커뮤니티 행사 운영</li>
-                <li>Devchat Night 2025·2026 모더레이터</li>
-                <li>스폰서, 연사, 장소, 운영 파트너 조율</li>
-              </ul>
             </div>
+
           </article>
 
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <strong>Education</strong>
-              <span>AI · Digital Learning</span>
-            </div>
-            <div class="timeline-content">
-              <h3>AI·디지털 교육 강사</h3>
-              <p>
-                생성형 AI, Python, 블록코딩을 활용한 프로젝트형 수업을 설계하고 있습니다.
-                고등학생 대상 캔위성 교육 강사로도 참여했습니다.
-              </p>
-              <ul>
-                <li>초등 고학년 대상 AI·블록코딩 PBL 수업 설계</li>
-                <li>기후변화 주제의 생성형 AI·엔트리 융합 프로젝트 개발</li>
-                <li>Python, Turtle, Pygame 기반 교육 콘텐츠 제작</li>
-              </ul>
-            </div>
-          </article>
         </div>
+
       </div>
     </section>
 
-    <section class="section" id="education">
-      <div class="container">
-        <p class="section-kicker">PROJECTS & EDUCATION</p>
-        <h2>주요 프로젝트</h2>
-        <div class="cards">
-          <article class="card">
-            <p class="card-label">AI EDUCATION</p>
-            <h3>AI와 함께하는 지구 관리자</h3>
-            <p>
-              초등학교 5~6학년 대상 4차시 프로젝트 수업.
-              기후변화 탐구, 생성형 AI 활용, 엔트리 게임 제작,
-              AI 윤리·디지털 시민성을 하나의 흐름으로 구성했습니다.
-            </p>
-          </article>
-          <article class="card">
-            <p class="card-label">TECH COMMUNITY</p>
-            <h3>Devchat Night</h3>
-            <p>
-              개발자와 기술 리더가 연결되는 커뮤니티 행사 운영과 모더레이션을 맡아
-              세션 구성, 연사 커뮤니케이션, 현장 진행을 경험했습니다.
-            </p>
-          </article>
-          <article class="card">
-            <p class="card-label">CAREER</p>
-            <h3>Tech Career Coaching</h3>
-            <p>
-              개발자와 이공계 청년의 취업 준비를 지원하며
-              이력서, 면접, 직무 탐색, 커리어 스토리 정리를 교육했습니다.
-            </p>
-          </article>
+
+    <!-- CONTACT -->
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+
+        <div>
+
+          <p class="section-kicker">
+            CONTACT
+          </p>
+
+          <h2>
+            강의와 교육을<br>
+            함께 만들고 싶다면
+          </h2>
+
+          <p class="contact-copy">
+            대학·학교·교육기관·기업·커뮤니티의
+            AI 진로교육, Tech Career, 개발자 취업,
+            생성형 AI 교육 관련 문의를 받고 있습니다.
+          </p>
+
+          <p class="contact-copy">
+            대상, 인원, 시간, 원하는 교육 방향을 남겨주시면
+            확인 후 회신드리겠습니다.
+          </p>
+
         </div>
+
+
+        <!--
+          Formspree 연결 필요
+          https://formspree.io 에서 무료 Form 생성 후
+          아래 YOUR_FORM_ID 부분만 교체하세요.
+        -->
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+        >
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="[Kate Hwang 웹사이트] 새로운 강의·협업 문의"
+          >
+
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="name">이름 / 담당자명</label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="홍길동"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="organization">기관명</label>
+
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                placeholder="기관 또는 회사명"
+              >
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="email">
+              회신받을 이메일
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="type">
+              문의 유형
+            </label>
+
+            <select id="type" name="type">
+
+              <option value="AI 진로·직무 교육">
+                AI 진로·직무 교육
+              </option>
+
+              <option value="Tech Career 특강">
+                Tech Career 특강
+              </option>
+
+              <option value="생성형 AI 교육">
+                생성형 AI 교육
+              </option>
+
+              <option value="커리어 코칭">
+                커리어 코칭
+              </option>
+
+              <option value="행사·패널·모더레이션">
+                행사·패널·모더레이션
+              </option>
+
+              <option value="기타">
+                기타
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="message">
+              문의 내용
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="대상, 예상 인원, 일정, 원하는 교육 내용 등을 자유롭게 적어주세요."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="submit-button"
+          >
+            문의 보내기
+          </button>
+
+          <p class="form-note">
+            입력한 내용은 강의·협업 문의 확인을 위해서만 사용됩니다.
+          </p>
+
+        </form>
+
       </div>
     </section>
 
-      <div class="container">
-        <h2>SKILLS</h2>
-        <div class="skill-grid">
-          <div>
-            <h3>Recruiting</h3>
-            <p>Talent Sourcing · Candidate Interview · Talent Mapping · Hiring Project Management</p>
-          </div>
-          <div>
-            <h3>Career</h3>
-            <p>Career Coaching · Resume · Interview · Career Storytelling · Workshop Facilitation</p>
-          </div>
-          <div>
-            <h3>Community</h3>
-            <p>Event Operations · Moderation · Partnership · Speaker Communication · Documentation</p>
-          </div>
-          <div>
-            <h3>Education</h3>
-            <p>Generative AI · Python · Entry Block Coding · PBL · Digital Citizenship</p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
+
 
   <footer>
     <div class="container footer-inner">
-      <span>Kate Hwang</span>
-      <span>Public Web Resume</span>
+
+      <span>
+        © 2026 Kate Hwang
+      </span>
+
+      <span>
+        AI Career · Tech Education
+      </span>
+
     </div>
   </footer>
+
+
 </body>
 </html>
