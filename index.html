@@ -467,18 +467,6 @@
       box-shadow: 0 18px 45px rgba(15,23,42,.06);
     }
 
-    .program-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 22px;
-      border-radius: 12px;
-      background: #eff6ff;
-      font-size: 23px;
-    }
-
     .program-label {
       color: #2563eb;
       font-size: 12px;
@@ -581,15 +569,15 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 34px;
+      gap: 20px;
     }
 
     .sponsor-logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: 150px;
-      height: 65px;
+      min-width: 165px;
+      height: 72px;
       padding: 12px 18px;
       border-radius: 10px;
       background: white;
@@ -597,8 +585,8 @@
 
     .sponsor-logo img {
       width: auto;
-      max-width: 130px;
-      max-height: 38px;
+      max-width: 135px;
+      max-height: 42px;
       object-fit: contain;
     }
 
@@ -654,38 +642,137 @@
     /* CAREER */
 
     .career-grid {
-      margin-top: 50px;
+      margin-top: 55px;
       border-top: 1px solid #d1d5db;
     }
 
     .career-item {
       display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 50px;
-      padding: 38px 0;
+      grid-template-columns: 280px 1fr;
+      gap: 70px;
+      padding: 55px 0;
       border-bottom: 1px solid #d1d5db;
     }
 
     .career-meta strong {
       display: block;
-      font-size: 17px;
+      font-size: 18px;
+      line-height: 1.4;
     }
 
-    .career-meta span {
+    .career-meta > span {
       display: block;
       margin-top: 5px;
       color: #6b7280;
       font-size: 13px;
     }
 
-    .career-content h3 {
-      font-size: 22px;
+    .career-role {
+      margin-top: 18px;
+      color: #2563eb;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 700;
     }
 
-    .career-content p {
-      max-width: 760px;
-      margin-top: 10px;
+    .career-content h3 {
+      font-size: 25px;
+      line-height: 1.4;
+      letter-spacing: -.025em;
+    }
+
+    .career-content > p {
+      max-width: 780px;
+      margin-top: 13px;
       color: #6b7280;
+      font-size: 16px;
+    }
+
+    .career-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 30px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #e5e7eb;
+    }
+
+    .career-stats-three {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .career-stat {
+      min-height: 110px;
+      padding: 21px 18px;
+      background: #f8fafc;
+    }
+
+    .career-stat strong {
+      display: block;
+      color: #2563eb;
+      font-size: 27px;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+    }
+
+    .career-stat span {
+      display: block;
+      margin-top: 8px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .career-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 27px;
+      padding-left: 20px;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    .career-list li::marker {
+      color: #2563eb;
+    }
+
+    .university-timeline {
+      display: grid;
+      gap: 18px;
+      margin-top: 32px;
+      padding-left: 17px;
+      border-left: 2px solid #dbeafe;
+    }
+
+    .university-item {
+      position: relative;
+    }
+
+    .university-item::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: -22px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2563eb;
+    }
+
+    .university-item strong {
+      display: block;
+      margin-top: 2px;
+      color: #374151;
+      font-size: 14px;
+    }
+
+    .university-year {
+      display: block;
+      color: #9ca3af;
+      font-size: 11px;
+      font-weight: 600;
     }
 
     /* CONTACT */
@@ -840,11 +927,20 @@
 
       .career-item {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 30px;
+      }
+
+      .career-stats,
+      .career-stats-three {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .speaking-head {
         display: block;
+      }
+
+      .university-timeline {
+        max-width: 320px;
       }
     }
 
@@ -875,6 +971,19 @@
 
       .expertise-list {
         grid-template-columns: 1fr;
+      }
+
+      .career-stats,
+      .career-stats-three {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .career-stat {
+        min-height: 100px;
+      }
+
+      .career-content h3 {
+        font-size: 22px;
       }
 
       .form-row {
@@ -1305,16 +1414,8 @@
 
       <div class="program-grid">
 
-        <!-- 01 -->
         <article class="program-card">
-
-          <div class="program-icon">
-            🧭
-          </div>
-
-          <p class="program-label">
-            AI CAREER
-          </p>
+          <p class="program-label">AI CAREER</p>
 
           <h3>
             AI 시대 진로·직무 교육
@@ -1331,20 +1432,11 @@
             <span>진로 설계</span>
             <span>AI 리터러시</span>
           </div>
-
         </article>
 
 
-        <!-- 02 -->
         <article class="program-card">
-
-          <div class="program-icon">
-            💼
-          </div>
-
-          <p class="program-label">
-            TECH CAREER
-          </p>
+          <p class="program-label">TECH CAREER</p>
 
           <h3>
             개발자·이공계 취업 교육
@@ -1363,20 +1455,11 @@
             <span>포트폴리오</span>
             <span>면접</span>
           </div>
-
         </article>
 
 
-        <!-- 03 -->
         <article class="program-card">
-
-          <div class="program-icon">
-            ✨
-          </div>
-
-          <p class="program-label">
-            GENERATIVE AI
-          </p>
+          <p class="program-label">GENERATIVE AI</p>
 
           <h3>
             생성형 AI 활용 교육
@@ -1394,20 +1477,11 @@
             <span>AI 윤리</span>
             <span>디지털 시민성</span>
           </div>
-
         </article>
 
 
-        <!-- 04 -->
         <article class="program-card">
-
-          <div class="program-icon">
-            🧩
-          </div>
-
-          <p class="program-label">
-            BLOCK CODING
-          </p>
+          <p class="program-label">BLOCK CODING</p>
 
           <h3>
             엔트리·스크래치 블록코딩
@@ -1424,20 +1498,11 @@
             <span>게임 만들기</span>
             <span>알고리즘</span>
           </div>
-
         </article>
 
 
-        <!-- 05 -->
         <article class="program-card">
-
-          <div class="program-icon">
-            🤖
-          </div>
-
-          <p class="program-label">
-            ROBOT CODING
-          </p>
+          <p class="program-label">ROBOT CODING</p>
 
           <h3>
             핑퐁로봇·로봇 코딩
@@ -1454,20 +1519,11 @@
             <span>센서</span>
             <span>피지컬 컴퓨팅</span>
           </div>
-
         </article>
 
 
-        <!-- 06 -->
         <article class="program-card">
-
-          <div class="program-icon">
-            🚁
-          </div>
-
-          <p class="program-label">
-            DRONE
-          </p>
+          <p class="program-label">DRONE</p>
 
           <h3>
             드론·피지컬 컴퓨팅
@@ -1485,20 +1541,11 @@
             <span>코딩 제어</span>
             <span>프로젝트 수업</span>
           </div>
-
         </article>
 
 
-        <!-- 07 -->
         <article class="program-card">
-
-          <div class="program-icon">
-            🐍
-          </div>
-
-          <p class="program-label">
-            PYTHON
-          </p>
+          <p class="program-label">PYTHON</p>
 
           <h3>
             Python 기초 코딩
@@ -1516,20 +1563,11 @@
             <span>게임 만들기</span>
             <span>문제 해결</span>
           </div>
-
         </article>
 
 
-        <!-- 08 -->
         <article class="program-card">
-
-          <div class="program-icon">
-            🌏
-          </div>
-
-          <p class="program-label">
-            AI × PROJECT
-          </p>
+          <p class="program-label">AI × PROJECT</p>
 
           <h3>
             AI 융합 프로젝트 수업
@@ -1547,20 +1585,11 @@
             <span>코딩</span>
             <span>문제 해결</span>
           </div>
-
         </article>
 
 
-        <!-- 09 -->
         <article class="program-card">
-
-          <div class="program-icon">
-            👩‍🏫
-          </div>
-
-          <p class="program-label">
-            TEACHER TRAINING
-          </p>
+          <p class="program-label">TEACHER TRAINING</p>
 
           <h3>
             교사·강사 대상 AI 활용 교육
@@ -1578,7 +1607,6 @@
             <span>생성형 AI</span>
             <span>교육 콘텐츠</span>
           </div>
-
         </article>
 
       </div>
@@ -1703,75 +1731,262 @@
         주요 경력
       </h2>
 
+      <p class="section-description">
+        진로·취업 교육부터 개발자 커리어 코칭, 글로벌 테크 채용까지
+        사람의 커리어와 채용 시장을 가까이에서 경험해 왔습니다.
+      </p>
+
 
       <div class="career-grid">
 
+        <!-- ROBERT WALTERS -->
         <article class="career-item">
 
           <div class="career-meta">
-            <strong>Robert Walters Korea</strong>
-            <span>2024 — 2026</span>
+
+            <strong>
+              Robert Walters Korea
+            </strong>
+
+            <span>
+              2024 — 2026
+            </span>
+
+            <div class="career-role">
+              Candidate Manager,<br>
+              Technology
+            </div>
+
           </div>
+
 
           <div class="career-content">
 
             <h3>
-              Candidate Manager, Technology
+              글로벌 서치펌에서 테크 채용 프로젝트 담당
             </h3>
 
             <p>
-              Backend, Frontend, DevOps, ML/AI 등 테크 직군을 대상으로
-              후보자 인터뷰, Talent Mapping, 채용시장 분석과
-              채용 프로젝트를 담당했습니다.
+              Backend, Frontend, DevOps, ML/AI 등 테크 직군의
+              후보자 발굴과 인터뷰, Talent Mapping, 채용시장 분석을 담당했습니다.
+              개발자와 기업을 직접 만나며 채용 시장의 변화와
+              기업이 실제로 어떤 역량을 평가하는지 경험했습니다.
             </p>
+
+
+            <div class="career-stats">
+
+              <div class="career-stat">
+                <strong>280+</strong>
+                <span>테크 후보자 인터뷰</span>
+              </div>
+
+              <div class="career-stat">
+                <strong>19</strong>
+                <span>누적 Placement</span>
+              </div>
+
+              <div class="career-stat">
+                <strong>5.1억+</strong>
+                <span>누적 Fee</span>
+              </div>
+
+              <div class="career-stat">
+                <strong>80–100</strong>
+                <span>주간 Live Hiring Project</span>
+              </div>
+
+            </div>
+
+
+            <ul class="career-list">
+              <li>Talent Sourcing · Candidate Interview · Talent Mapping</li>
+              <li>개발자 및 시니어 테크 인재 대상 채용 프로젝트 운영</li>
+              <li>기업 채용 니즈 및 테크 채용시장 분석</li>
+              <li>2025 Q2 · Q3 Top Sourcerer 수상</li>
+            </ul>
 
           </div>
 
         </article>
 
 
+        <!-- CODE STATES -->
         <article class="career-item">
 
           <div class="career-meta">
-            <strong>Code States</strong>
-            <span>2022 — 2023</span>
-          </div>
 
-          <div class="career-content">
+            <strong>
+              Code States
+            </strong>
 
-            <h3>
+            <span>
+              2022 — 2023
+            </span>
+
+            <div class="career-role">
               Career Coach
+            </div>
+
+          </div>
+
+
+          <div class="career-content">
+
+            <h3>
+              개발자 취업과 커리어를 위한 실전 코칭
             </h3>
 
             <p>
-              K-Digital Training 개발자 교육과 연계해
-              이력서, 포트폴리오, 면접, 커리어 설계 프로그램과
-              1:1 코칭을 운영했습니다.
+              K-Digital Training 개발자 교육 과정에서
+              취업을 준비하는 수강생을 대상으로 이력서, 포트폴리오,
+              면접, 직무 탐색과 커리어 설계 교육을 진행했습니다.
+              개발 경험을 기업이 이해할 수 있는 언어로 정리하는 과정에 집중했습니다.
             </p>
+
+
+            <div class="career-stats career-stats-three">
+
+              <div class="career-stat">
+                <strong>3,000+</strong>
+                <span>누적 커리어 코칭</span>
+              </div>
+
+              <div class="career-stat">
+                <strong>1:1</strong>
+                <span>맞춤형 커리어 코칭</span>
+              </div>
+
+              <div class="career-stat">
+                <strong>KDT</strong>
+                <span>개발자 취업 프로그램</span>
+              </div>
+
+            </div>
+
+
+            <ul class="career-list">
+              <li>개발자·이공계 청년 대상 커리어 교육 및 코칭</li>
+              <li>이력서 · 포트폴리오 · 면접 · 커리어 설계 교육</li>
+              <li>1:1 취업 전략 및 직무 방향 코칭</li>
+              <li>개발 직무와 채용 시장을 연결한 실전형 교육</li>
+            </ul>
 
           </div>
 
         </article>
 
 
+        <!-- UNIVERSITY -->
         <article class="career-item">
 
           <div class="career-meta">
-            <strong>University Career Education</strong>
-            <span>2016 — 2022</span>
+
+            <strong>
+              University Career Education
+            </strong>
+
+            <span>
+              2016 — 2022
+            </span>
+
+            <div class="career-role">
+              Career Consultant ·<br>
+              Instructor
+            </div>
+
+
+            <div class="university-timeline">
+
+              <div class="university-item">
+
+                <span class="university-year">
+                  2016 — 2017
+                </span>
+
+                <strong>
+                  호서대학교
+                </strong>
+
+              </div>
+
+
+              <div class="university-item">
+
+                <span class="university-year">
+                  2017 — 2019
+                </span>
+
+                <strong>
+                  안산대학교
+                </strong>
+
+              </div>
+
+
+              <div class="university-item">
+
+                <span class="university-year">
+                  2019 — 2022
+                </span>
+
+                <strong>
+                  한국공학대학교
+                </strong>
+
+              </div>
+
+            </div>
+
           </div>
+
 
           <div class="career-content">
 
             <h3>
-              Career Consultant · Instructor
+              이공계 청년 진로·취업 교육과 대학 커리어 프로그램 운영
             </h3>
 
             <p>
-              한국공학대학교, 호서대학교, 안산대학교 등에서
-              이공계 청년의 진로·취업 교육과 상담,
-              기업 연계 프로그램 및 채용박람회를 운영했습니다.
+              호서대학교, 안산대학교, 한국공학대학교에서
+              대학생과 이공계 청년을 대상으로 진로·취업 교육과 상담을 진행했습니다.
+              개인 상담부터 대규모 강의, 기업 연계 프로그램과
+              채용박람회까지 다양한 형태의 프로그램을 운영했습니다.
             </p>
+
+
+            <div class="career-stats">
+
+              <div class="career-stat">
+                <strong>500+</strong>
+                <span>최대 오프라인 강의 규모</span>
+              </div>
+
+              <div class="career-stat">
+                <strong>1,200</strong>
+                <span>채용박람회 일 방문자</span>
+              </div>
+
+              <div class="career-stat">
+                <strong>200%+</strong>
+                <span>전년 대비 행사 참여율</span>
+              </div>
+
+              <div class="career-stat">
+                <strong>6년</strong>
+                <span>대학 진로교육 현장</span>
+              </div>
+
+            </div>
+
+
+            <ul class="career-list">
+              <li>이공계 청년 대상 진로 · 취업 강의 및 상담</li>
+              <li>자기소개서 · 면접 · 직무 탐색 · 취업 전략 교육</li>
+              <li>기업 연계 프로그램 및 현직자 멘토링 운영</li>
+              <li>한국공학대학교 채용박람회 기획·운영 주도</li>
+              <li>학생 눈높이에 맞춘 대규모 진로·취업 프로그램 운영</li>
+            </ul>
 
           </div>
 
