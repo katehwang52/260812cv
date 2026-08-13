@@ -337,20 +337,27 @@
       box-shadow: 0 22px 50px rgba(15,23,42,.09);
     }
 
+    /* 사진 전체가 보이도록 수정 */
     .portfolio-image {
-      height: 350px;
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
       overflow: hidden;
-      background: #eef2f7;
+      background: #f3f4f6;
     }
 
     .portfolio-image img {
+      width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
       transition: .35s ease;
     }
 
     .portfolio-card:hover img {
-      transform: scale(1.025);
+      transform: scale(1.015);
     }
 
     .portfolio-body {
@@ -615,15 +622,28 @@
       font-size: 13px;
     }
 
+    /* Devchat 사진도 전체 보이도록 수정 */
     .devchat-photo {
       overflow: hidden;
       border-radius: 18px;
       background: #161b22;
     }
 
-    .devchat-photo img {
-      aspect-ratio: 1.35;
-      object-fit: cover;
+    .devchat-photo-image {
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: #111827;
+    }
+
+    .devchat-photo-image img {
+      width: 100%;
+      height: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      object-position: center;
     }
 
     .photo-caption {
@@ -921,6 +941,10 @@
         grid-template-columns: 1fr;
       }
 
+      .portfolio-image {
+        height: 420px;
+      }
+
       .program-grid {
         grid-template-columns: 1fr;
       }
@@ -941,6 +965,10 @@
 
       .university-timeline {
         max-width: 320px;
+      }
+
+      .devchat-photo-image {
+        min-height: 350px;
       }
     }
 
@@ -973,6 +1001,11 @@
         grid-template-columns: 1fr;
       }
 
+      .portfolio-image {
+        height: 330px;
+        padding: 10px;
+      }
+
       .career-stats,
       .career-stats-three {
         grid-template-columns: 1fr 1fr;
@@ -997,6 +1030,11 @@
 
       .footer-inner {
         display: block;
+      }
+
+      .devchat-photo-image {
+        min-height: 280px;
+        padding: 10px;
       }
     }
   </style>
@@ -1416,16 +1454,11 @@
 
         <article class="program-card">
           <p class="program-label">AI CAREER</p>
-
-          <h3>
-            AI 시대 진로·직무 교육
-          </h3>
-
+          <h3>AI 시대 진로·직무 교육</h3>
           <p>
             AI로 직업과 일하는 방식이 어떻게 달라지고 있는지 알아보고
             자신의 관심 분야와 진로를 연결해보는 수업입니다.
           </p>
-
           <div class="program-list">
             <span>AI 시대 직업 변화</span>
             <span>미래 직업 탐색</span>
@@ -1437,17 +1470,12 @@
 
         <article class="program-card">
           <p class="program-label">TECH CAREER</p>
-
-          <h3>
-            개발자·이공계 취업 교육
-          </h3>
-
+          <h3>개발자·이공계 취업 교육</h3>
           <p>
             실제 테크 채용 현장에서 쌓은 경험을 바탕으로
             채용 시장의 변화부터 이력서, 포트폴리오,
             면접까지 취업에 필요한 내용을 다룹니다.
           </p>
-
           <div class="program-list">
             <span>채용 트렌드</span>
             <span>JD 분석</span>
@@ -1460,17 +1488,12 @@
 
         <article class="program-card">
           <p class="program-label">GENERATIVE AI</p>
-
-          <h3>
-            생성형 AI 활용 교육
-          </h3>
-
+          <h3>생성형 AI 활용 교육</h3>
           <p>
             ChatGPT와 생성형 AI를 직접 사용해보며
             질문하는 방법부터 정보 확인, 아이디어 만들기,
             문제 해결까지 경험하는 수업입니다.
           </p>
-
           <div class="program-list">
             <span>생성형 AI</span>
             <span>프롬프트</span>
@@ -1482,16 +1505,11 @@
 
         <article class="program-card">
           <p class="program-label">BLOCK CODING</p>
-
-          <h3>
-            엔트리·스크래치 블록코딩
-          </h3>
-
+          <h3>엔트리·스크래치 블록코딩</h3>
           <p>
             처음 코딩을 접하는 학생도 직접 움직이고 결과를 확인하면서
             알고리즘과 프로그래밍의 기본 원리를 익힐 수 있도록 진행합니다.
           </p>
-
           <div class="program-list">
             <span>엔트리</span>
             <span>스크래치</span>
@@ -1503,16 +1521,11 @@
 
         <article class="program-card">
           <p class="program-label">ROBOT CODING</p>
-
-          <h3>
-            핑퐁로봇·로봇 코딩
-          </h3>
-
+          <h3>핑퐁로봇·로봇 코딩</h3>
           <p>
             코딩한 명령이 실제 로봇의 움직임으로 이어지는 과정을 경험하며
             센서, 제어, 순서와 조건 같은 코딩 개념을 익히는 수업입니다.
           </p>
-
           <div class="program-list">
             <span>핑퐁로봇</span>
             <span>로봇 제어</span>
@@ -1524,17 +1537,12 @@
 
         <article class="program-card">
           <p class="program-label">DRONE</p>
-
-          <h3>
-            드론·피지컬 컴퓨팅
-          </h3>
-
+          <h3>드론·피지컬 컴퓨팅</h3>
           <p>
             드론과 다양한 디지털 기기를 직접 제어하며
             코딩이 실제 장치와 어떻게 연결되는지
             실습을 통해 배우는 수업입니다.
           </p>
-
           <div class="program-list">
             <span>드론</span>
             <span>비행 원리</span>
@@ -1546,17 +1554,12 @@
 
         <article class="program-card">
           <p class="program-label">PYTHON</p>
-
-          <h3>
-            Python 기초 코딩
-          </h3>
-
+          <h3>Python 기초 코딩</h3>
           <p>
             간단한 문제 해결과 게임 만들기를 통해
             변수, 조건문, 반복문, 함수 등
             Python의 기본 개념을 익히는 수업입니다.
           </p>
-
           <div class="program-list">
             <span>Python</span>
             <span>Turtle</span>
@@ -1568,17 +1571,12 @@
 
         <article class="program-card">
           <p class="program-label">AI × PROJECT</p>
-
-          <h3>
-            AI 융합 프로젝트 수업
-          </h3>
-
+          <h3>AI 융합 프로젝트 수업</h3>
           <p>
             환경, 진로, 과학 등 하나의 주제를 정하고
             AI와 코딩을 함께 활용해
             학생이 직접 결과물을 만드는 프로젝트형 수업입니다.
           </p>
-
           <div class="program-list">
             <span>PBL</span>
             <span>AI</span>
@@ -1590,17 +1588,12 @@
 
         <article class="program-card">
           <p class="program-label">TEACHER TRAINING</p>
-
-          <h3>
-            교사·강사 대상 AI 활용 교육
-          </h3>
-
+          <h3>교사·강사 대상 AI 활용 교육</h3>
           <p>
             방과후 교사와 교육 강사가 수업 현장에서
             생성형 AI와 디지털 도구를 실제로 활용할 수 있도록
             실습 중심으로 진행합니다.
           </p>
-
           <div class="program-list">
             <span>교사 연수</span>
             <span>수업 설계</span>
@@ -1696,10 +1689,12 @@
 
       <div class="devchat-photo">
 
-        <img
-          src="images/devchat-cio.jpg"
-          alt="Devchat Night 패널 모더레이션"
-        >
+        <div class="devchat-photo-image">
+          <img
+            src="images/devchat-cio.jpg"
+            alt="Devchat Night 패널 모더레이션"
+          >
+        </div>
 
         <div class="photo-caption">
 
@@ -2027,11 +2022,6 @@
       </div>
 
 
-      <!--
-        Formspree에서 Form을 만든 뒤
-        YOUR_FORM_ID만 실제 ID로 교체하세요.
-      -->
-
       <form
         class="contact-form"
         action="https://formspree.io/f/YOUR_FORM_ID"
@@ -2048,10 +2038,7 @@
         <div class="form-row">
 
           <div class="form-group">
-
-            <label for="name">
-              이름 / 담당자명
-            </label>
+            <label for="name">이름 / 담당자명</label>
 
             <input
               type="text"
@@ -2060,15 +2047,11 @@
               placeholder="홍길동"
               required
             >
-
           </div>
 
 
           <div class="form-group">
-
-            <label for="organization">
-              기관명
-            </label>
+            <label for="organization">기관명</label>
 
             <input
               type="text"
@@ -2076,17 +2059,13 @@
               name="organization"
               placeholder="학교 또는 기관명"
             >
-
           </div>
 
         </div>
 
 
         <div class="form-group">
-
-          <label for="email">
-            회신받을 이메일
-          </label>
+          <label for="email">회신받을 이메일</label>
 
           <input
             type="email"
@@ -2095,115 +2074,50 @@
             placeholder="example@email.com"
             required
           >
-
         </div>
 
 
         <div class="form-group">
-
-          <label for="audience">
-            교육 대상
-          </label>
+          <label for="audience">교육 대상</label>
 
           <select
             id="audience"
             name="audience"
           >
-
-            <option value="초등학생">
-              초등학생
-            </option>
-
-            <option value="중학생">
-              중학생
-            </option>
-
-            <option value="고등학생">
-              고등학생
-            </option>
-
-            <option value="대학생·취업준비생">
-              대학생·취업준비생
-            </option>
-
-            <option value="개발자">
-              개발자
-            </option>
-
-            <option value="교사·강사">
-              교사·강사
-            </option>
-
-            <option value="기타">
-              기타
-            </option>
-
+            <option value="초등학생">초등학생</option>
+            <option value="중학생">중학생</option>
+            <option value="고등학생">고등학생</option>
+            <option value="대학생·취업준비생">대학생·취업준비생</option>
+            <option value="개발자">개발자</option>
+            <option value="교사·강사">교사·강사</option>
+            <option value="기타">기타</option>
           </select>
-
         </div>
 
 
         <div class="form-group">
-
-          <label for="type">
-            관심 교육
-          </label>
+          <label for="type">관심 교육</label>
 
           <select
             id="type"
             name="type"
           >
-
-            <option value="AI 진로·직무 교육">
-              AI 진로·직무 교육
-            </option>
-
-            <option value="개발자·이공계 취업 교육">
-              개발자·이공계 취업 교육
-            </option>
-
-            <option value="생성형 AI 교육">
-              생성형 AI 교육
-            </option>
-
-            <option value="엔트리·스크래치 블록코딩">
-              엔트리·스크래치 블록코딩
-            </option>
-
-            <option value="Python 교육">
-              Python 교육
-            </option>
-
-            <option value="핑퐁로봇·로봇 코딩">
-              핑퐁로봇·로봇 코딩
-            </option>
-
-            <option value="드론 교육">
-              드론 교육
-            </option>
-
-            <option value="AI 융합 프로젝트">
-              AI 융합 프로젝트
-            </option>
-
-            <option value="교사·강사 연수">
-              교사·강사 연수
-            </option>
-
-            <option value="기타">
-              기타
-            </option>
-
+            <option value="AI 진로·직무 교육">AI 진로·직무 교육</option>
+            <option value="개발자·이공계 취업 교육">개발자·이공계 취업 교육</option>
+            <option value="생성형 AI 교육">생성형 AI 교육</option>
+            <option value="엔트리·스크래치 블록코딩">엔트리·스크래치 블록코딩</option>
+            <option value="Python 교육">Python 교육</option>
+            <option value="핑퐁로봇·로봇 코딩">핑퐁로봇·로봇 코딩</option>
+            <option value="드론 교육">드론 교육</option>
+            <option value="AI 융합 프로젝트">AI 융합 프로젝트</option>
+            <option value="교사·강사 연수">교사·강사 연수</option>
+            <option value="기타">기타</option>
           </select>
-
         </div>
 
 
         <div class="form-group">
-
-          <label for="message">
-            문의 내용
-          </label>
+          <label for="message">문의 내용</label>
 
           <textarea
             id="message"
@@ -2211,7 +2125,6 @@
             placeholder="예상 인원, 교육 시간, 일정, 원하는 내용을 자유롭게 적어주세요."
             required
           ></textarea>
-
         </div>
 
 
