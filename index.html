@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="AI 시대의 진로와 직무를 교육하는 Kate Hwang의 강의·커리어·테크 커뮤니티 포트폴리오"
+    content="AI 진로·직무 교육, 개발자 커리어, 생성형 AI, 코딩·로봇 융합교육을 진행하는 Kate Hwang의 강의 포트폴리오"
   >
 
   <title>Kate Hwang | AI Career & Tech Education</title>
@@ -29,10 +29,9 @@
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
-
       color: #111827;
       background: #ffffff;
-      line-height: 1.65;
+      line-height: 1.7;
       word-break: keep-all;
     }
 
@@ -58,6 +57,35 @@
       margin: 0 auto;
     }
 
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-alt {
+      background: #f7f9fc;
+    }
+
+    .section-kicker {
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .section-title {
+      margin-top: 12px;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.2;
+      letter-spacing: -.04em;
+    }
+
+    .section-description {
+      margin-top: 18px;
+      max-width: 720px;
+      color: #6b7280;
+      font-size: 17px;
+    }
+
     /* NAV */
 
     .nav-wrap {
@@ -80,13 +108,13 @@
     .brand {
       font-size: 20px;
       font-weight: 800;
-      letter-spacing: -0.03em;
+      letter-spacing: -.03em;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 26px;
       font-size: 14px;
       font-weight: 600;
       color: #4b5563;
@@ -99,32 +127,30 @@
     .nav-contact {
       padding: 10px 18px;
       border-radius: 999px;
-      background: #111827;
       color: white !important;
+      background: #111827;
     }
 
     /* HERO */
 
     .hero {
-      padding: 115px 0 100px;
+      padding: 120px 0 105px;
       overflow: hidden;
       background:
-        radial-gradient(circle at 80% 20%, #dbeafe 0, transparent 27%),
+        radial-gradient(circle at 82% 20%, #dbeafe 0, transparent 27%),
         linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
     }
 
-    .eyebrow,
-    .section-kicker {
+    .hero .eyebrow {
       color: #2563eb;
       font-size: 13px;
       font-weight: 800;
       letter-spacing: .12em;
-      text-transform: uppercase;
     }
 
     .hero h1 {
       margin-top: 22px;
-      max-width: 920px;
+      max-width: 900px;
       font-size: clamp(44px, 6vw, 76px);
       line-height: 1.08;
       letter-spacing: -.055em;
@@ -137,10 +163,16 @@
 
     .hero-copy {
       margin-top: 30px;
-      max-width: 760px;
-      font-size: 20px;
+      max-width: 780px;
       color: #4b5563;
-      line-height: 1.75;
+      font-size: 20px;
+    }
+
+    .hero-subcopy {
+      margin-top: 14px;
+      max-width: 780px;
+      color: #6b7280;
+      font-size: 16px;
     }
 
     .hero-buttons {
@@ -162,7 +194,7 @@
     }
 
     .button-primary {
-      color: #fff;
+      color: white;
       background: #2563eb;
     }
 
@@ -177,49 +209,25 @@
     }
 
     .button-secondary:hover {
-      border-color: #2563eb;
       color: #2563eb;
+      border-color: #2563eb;
     }
 
-    .hero-keywords {
-      margin-top: 60px;
+    .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 55px;
     }
 
-    .hero-keywords span {
+    .hero-tags span {
       padding: 8px 13px;
-      background: rgba(255,255,255,.75);
       border: 1px solid #dbe2ea;
       border-radius: 999px;
+      background: rgba(255,255,255,.8);
+      color: #374151;
       font-size: 13px;
       font-weight: 600;
-      color: #374151;
-    }
-
-    /* COMMON */
-
-    .section {
-      padding: 110px 0;
-    }
-
-    .section-alt {
-      background: #f7f9fc;
-    }
-
-    .section-title {
-      margin-top: 12px;
-      font-size: clamp(34px, 4vw, 52px);
-      line-height: 1.2;
-      letter-spacing: -.04em;
-    }
-
-    .section-description {
-      margin-top: 18px;
-      max-width: 720px;
-      color: #6b7280;
-      font-size: 17px;
     }
 
     /* IMPACT */
@@ -232,7 +240,7 @@
     }
 
     .impact-item {
-      padding: 45px 32px;
+      padding: 45px 30px;
       border-right: 1px solid #d1d5db;
     }
 
@@ -242,9 +250,9 @@
 
     .impact-number {
       display: block;
+      color: #2563eb;
       font-size: 42px;
       line-height: 1;
-      color: #2563eb;
       font-weight: 850;
       letter-spacing: -.04em;
     }
@@ -267,8 +275,8 @@
     }
 
     .about-copy {
-      font-size: 18px;
       color: #374151;
+      font-size: 18px;
     }
 
     .about-copy p + p {
@@ -284,15 +292,15 @@
 
     .expertise {
       padding: 20px;
+      border: 1px solid #e5e7eb;
       border-radius: 12px;
       background: #f8fafc;
-      border: 1px solid #e5e7eb;
     }
 
     .expertise strong {
       display: block;
-      font-size: 15px;
       margin-bottom: 4px;
+      font-size: 15px;
     }
 
     .expertise span {
@@ -305,13 +313,9 @@
     .speaking-head {
       display: flex;
       justify-content: space-between;
-      gap: 40px;
       align-items: end;
+      gap: 40px;
       margin-bottom: 50px;
-    }
-
-    .speaking-head .section-description {
-      max-width: 520px;
     }
 
     .portfolio-grid {
@@ -322,8 +326,8 @@
 
     .portfolio-card {
       overflow: hidden;
-      border-radius: 18px;
       border: 1px solid #e5e7eb;
+      border-radius: 18px;
       background: white;
       transition: .25s ease;
     }
@@ -334,13 +338,12 @@
     }
 
     .portfolio-image {
-      height: 360px;
+      height: 350px;
       overflow: hidden;
       background: #eef2f7;
     }
 
     .portfolio-image img {
-      width: 100%;
       height: 100%;
       object-fit: cover;
       transition: .35s ease;
@@ -359,7 +362,7 @@
       color: #2563eb;
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: .1em;
+      letter-spacing: .08em;
     }
 
     .portfolio-body h3 {
@@ -390,33 +393,136 @@
       font-weight: 700;
     }
 
-    /* CLIENTS */
-
     .organization-box {
-      margin-top: 75px;
-      padding-top: 40px;
+      margin-top: 70px;
+      padding-top: 38px;
       border-top: 1px solid #e5e7eb;
     }
 
     .organization-title {
-      margin-bottom: 25px;
-      color: #6b7280;
-      font-size: 13px;
+      margin-bottom: 22px;
+      color: #9ca3af;
+      font-size: 12px;
       font-weight: 700;
+      letter-spacing: .1em;
     }
 
     .organization-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px 32px;
-      align-items: center;
+      gap: 15px 32px;
     }
 
     .organization-list span {
+      color: #374151;
       font-size: 20px;
       font-weight: 800;
-      color: #374151;
       letter-spacing: -.03em;
+    }
+
+    /* EDUCATION FIELDS */
+
+    .education-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .audience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 24px;
+    }
+
+    .audience-tags span {
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: #eaf2ff;
+      color: #1d4ed8;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .program-card {
+      min-height: 325px;
+      padding: 32px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background: white;
+      transition: .2s;
+    }
+
+    .program-card:hover {
+      transform: translateY(-4px);
+      border-color: #bfdbfe;
+      box-shadow: 0 18px 45px rgba(15,23,42,.06);
+    }
+
+    .program-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 22px;
+      border-radius: 12px;
+      background: #eff6ff;
+      font-size: 23px;
+    }
+
+    .program-label {
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    .program-card h3 {
+      margin-top: 10px;
+      font-size: 22px;
+      line-height: 1.4;
+      letter-spacing: -.025em;
+    }
+
+    .program-card p {
+      margin-top: 13px;
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .program-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 20px;
+    }
+
+    .program-list span {
+      padding: 6px 9px;
+      border-radius: 6px;
+      background: #f3f4f6;
+      color: #4b5563;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .future-note {
+      margin-top: 30px;
+      padding: 22px 25px;
+      border-left: 4px solid #2563eb;
+      border-radius: 0 10px 10px 0;
+      background: #eff6ff;
+      color: #374151;
+      font-size: 14px;
     }
 
     /* DEVCHAT */
@@ -450,23 +556,23 @@
     }
 
     .devchat-copy {
-      margin-top: 26px;
+      margin-top: 25px;
       color: #cbd5e1;
       font-size: 17px;
     }
 
     .devchat-points {
-      margin-top: 30px;
       display: grid;
       gap: 12px;
+      margin-top: 30px;
     }
 
     .devchat-point {
       padding: 14px 17px;
       border: 1px solid #2a3441;
       border-radius: 10px;
-      color: #dbe4ef;
       background: #161b22;
+      color: #dbe4ef;
     }
 
     .devchat-photo {
@@ -486,58 +592,9 @@
       font-size: 12px;
     }
 
-    /* PROGRAMS */
-
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 50px;
-    }
-
-    .program-card {
-      min-height: 310px;
-      padding: 32px;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      background: white;
-    }
-
-    .program-number {
-      font-size: 13px;
-      color: #2563eb;
-      font-weight: 800;
-    }
-
-    .program-card h3 {
-      margin-top: 16px;
-      font-size: 23px;
-      line-height: 1.35;
-      letter-spacing: -.025em;
-    }
-
-    .program-card p {
-      margin-top: 14px;
-      color: #6b7280;
-      font-size: 15px;
-    }
-
-    .program-card ul {
-      margin-top: 20px;
-      padding-left: 18px;
-      color: #4b5563;
-      font-size: 14px;
-    }
-
-    .program-card li + li {
-      margin-top: 7px;
-    }
-
     /* CAREER */
 
     .career-grid {
-      display: grid;
-      gap: 0;
       margin-top: 50px;
       border-top: 1px solid #d1d5db;
     }
@@ -567,8 +624,8 @@
     }
 
     .career-content p {
-      margin-top: 10px;
       max-width: 760px;
+      margin-top: 10px;
       color: #6b7280;
     }
 
@@ -618,22 +675,21 @@
     .form-group label {
       display: block;
       margin-bottom: 7px;
+      color: #374151;
       font-size: 13px;
       font-weight: 700;
-      color: #374151;
     }
 
     .form-group input,
     .form-group textarea,
     .form-group select {
       width: 100%;
+      padding: 13px 14px;
       border: 1px solid #d1d5db;
       border-radius: 9px;
-      background: #fff;
-      outline: none;
-      padding: 13px 14px;
+      background: white;
       color: #111827;
-      transition: .2s;
+      outline: none;
     }
 
     .form-group input:focus,
@@ -650,8 +706,8 @@
 
     .submit-button {
       width: 100%;
-      border: 0;
       min-height: 54px;
+      border: 0;
       border-radius: 9px;
       background: #2563eb;
       color: white;
@@ -673,9 +729,9 @@
 
     footer {
       padding: 30px 0;
+      border-top: 1px solid #e5e7eb;
       color: #6b7280;
       font-size: 13px;
-      border-top: 1px solid #e5e7eb;
     }
 
     .footer-inner {
@@ -708,6 +764,7 @@
       }
 
       .about-grid,
+      .education-intro,
       .devchat-grid,
       .contact-grid {
         grid-template-columns: 1fr;
@@ -729,10 +786,6 @@
 
       .speaking-head {
         display: block;
-      }
-
-      .portfolio-image {
-        height: 300px;
       }
     }
 
@@ -791,9 +844,10 @@
 
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#speaking">Speaking</a>
-        <a href="#devchat">Community</a>
-        <a href="#programs">Programs</a>
+        <a href="#speaking">강연</a>
+        <a href="#education">교육 분야</a>
+        <a href="#devchat">Devchat</a>
+        <a href="#career">경력</a>
         <a href="#contact" class="nav-contact">강의 문의</a>
       </div>
     </div>
@@ -806,18 +860,23 @@
     <div class="container">
 
       <p class="eyebrow">
-        AI CAREER · TECH EDUCATION · COMMUNITY
+        AI CAREER · TECH EDUCATION · DIGITAL LEARNING
       </p>
 
       <h1>
         AI 시대의<br>
-        <span>진로와 직무</span>를 가르칩니다.
+        <span>진로와 직무</span>를 교육합니다.
       </h1>
 
       <p class="hero-copy">
-        테크 리크루팅 현장에서 얻은 채용 시장의 인사이트와
-        대학·부트캠프·개발자 커뮤니티에서 쌓은 교육 경험을 바탕으로,
-        변화하는 기술과 직업을 학습자의 언어로 연결합니다.
+        테크 채용과 커리어 교육 현장에서 쌓은 경험을 바탕으로
+        AI와 기술의 변화가 실제 진로와 일에 어떤 영향을 주는지
+        쉽게 풀어 전달합니다.
+      </p>
+
+      <p class="hero-subcopy">
+        초·중·고등학생부터 대학생, 취업준비생, 개발자,
+        방과후 교사까지 대상에 맞는 교육을 진행합니다.
       </p>
 
       <div class="hero-buttons">
@@ -830,648 +889,840 @@
         </a>
       </div>
 
-      <div class="hero-keywords">
-        <span>AI Career Education</span>
-        <span>Tech Recruiting</span>
-        <span>Developer Career</span>
-        <span>Career Coaching</span>
-        <span>Generative AI</span>
-        <span>Community</span>
+      <div class="hero-tags">
+        <span>AI 진로교육</span>
+        <span>Tech Career</span>
+        <span>생성형 AI</span>
+        <span>Python</span>
+        <span>블록코딩</span>
+        <span>로봇·드론</span>
+        <span>개발자 커리어</span>
       </div>
 
     </div>
   </header>
 
 
-  <main>
+  <!-- IMPACT -->
 
-    <!-- IMPACT -->
+  <section>
+    <div class="container impact-grid">
 
-    <section>
-      <div class="container impact-grid">
-
-        <div class="impact-item">
-          <span class="impact-number">3,000+</span>
-          <span class="impact-label">Career Coaching</span>
-        </div>
-
-        <div class="impact-item">
-          <span class="impact-number">500+</span>
-          <span class="impact-label">Largest Offline Lecture</span>
-        </div>
-
-        <div class="impact-item">
-          <span class="impact-number">280+</span>
-          <span class="impact-label">Tech Candidate Interviews</span>
-        </div>
-
-        <div class="impact-item">
-          <span class="impact-number">10yr+</span>
-          <span class="impact-label">Career & Education Experience</span>
-        </div>
-
+      <div class="impact-item">
+        <span class="impact-number">3,000+</span>
+        <span class="impact-label">Career Coaching</span>
       </div>
-    </section>
 
-
-    <!-- ABOUT -->
-
-    <section class="section" id="about">
-      <div class="container about-grid">
-
-        <div>
-          <p class="section-kicker">ABOUT</p>
-
-          <h2 class="section-title">
-            기술을 설명하는 것보다<br>
-            기술이 바꾸는 일을<br>
-            설명합니다.
-          </h2>
-        </div>
-
-        <div class="about-copy">
-
-          <p>
-            대학 진로취업 현장부터 개발자 부트캠프,
-            글로벌 서치펌의 테크 채용까지
-            오랫동안 사람의 커리어와 직업 변화를 가까이에서 다뤄왔습니다.
-          </p>
-
-          <p>
-            현재는 그 경험을 바탕으로 AI 시대의 직무 변화,
-            개발자 채용 트렌드, 커리어 설계와 생성형 AI 활용을
-            연결한 진로·직무 교육을 설계하고 있습니다.
-          </p>
-
-          <p>
-            단순히 AI 도구 사용법을 알려주는 교육보다
-            <strong>“AI로 일이 어떻게 변하고 있고,
-            나는 무엇을 준비해야 하는가”</strong>를
-            이해하고 실제 행동으로 연결하는 교육을 지향합니다.
-          </p>
-
-          <div class="expertise-list">
-
-            <div class="expertise">
-              <strong>AI & Tech Career</strong>
-              <span>AI 시대 직무 변화와 채용 트렌드</span>
-            </div>
-
-            <div class="expertise">
-              <strong>Career Education</strong>
-              <span>대학생·취준생·주니어 직무 교육</span>
-            </div>
-
-            <div class="expertise">
-              <strong>Tech Recruiting</strong>
-              <span>개발자 채용시장 및 기업 평가 기준</span>
-            </div>
-
-            <div class="expertise">
-              <strong>Generative AI</strong>
-              <span>생성형 AI 활용 및 디지털 리터러시</span>
-            </div>
-
-          </div>
-
-        </div>
+      <div class="impact-item">
+        <span class="impact-number">500+</span>
+        <span class="impact-label">최대 오프라인 강의 규모</span>
       </div>
-    </section>
 
-
-    <!-- SPEAKING -->
-
-    <section class="section section-alt" id="speaking">
-      <div class="container">
-
-        <div class="speaking-head">
-
-          <div>
-            <p class="section-kicker">SPEAKING & EDUCATION</p>
-
-            <h2 class="section-title">
-              현장에서 만난<br>
-              학생과 개발자들
-            </h2>
-          </div>
-
-          <p class="section-description">
-            대학, 글로벌 테크 기업, 개발자 커뮤니티 등에서
-            AI·Tech 커리어, 개발자 취업, 직무 탐색을 주제로
-            강연과 교육을 진행해 왔습니다.
-          </p>
-
-        </div>
-
-
-        <div class="portfolio-grid">
-
-          <!-- GOOGLE / MICROSOFT -->
-
-          <article class="portfolio-card">
-
-            <div class="portfolio-image">
-              <img
-                src="images/gdg-ai-career.png"
-                alt="Google Developer Group Build with AI 커리어 강연"
-              >
-            </div>
-
-            <div class="portfolio-body">
-
-              <p class="portfolio-label">
-                GOOGLE DEVELOPER GROUP · MICROSOFT
-              </p>
-
-              <h3>
-                AI가 개발자를 대체할 수 있을까?
-              </h3>
-
-              <p>
-                AI 시대 개발자 채용 시장의 변화와
-                앞으로 요구되는 역량을 주제로
-                개발자와 취업 준비생을 위한 커리어 세션을 진행했습니다.
-              </p>
-
-              <div class="portfolio-tags">
-                <span>AI Career</span>
-                <span>Developer</span>
-                <span>Tech Recruiting</span>
-              </div>
-
-            </div>
-          </article>
-
-
-          <!-- SEOUL NATIONAL UNIVERSITY -->
-
-          <article class="portfolio-card">
-
-            <div class="portfolio-image">
-              <img
-                src="images/snu-career.jpg"
-                alt="서울대학교 개발자 커리어 세션"
-              >
-            </div>
-
-            <div class="portfolio-body">
-
-              <p class="portfolio-label">
-                SEOUL NATIONAL UNIVERSITY
-              </p>
-
-              <h3>
-                From Code to Product
-              </h3>
-
-              <p>
-                서울대학교 CS 커뮤니티를 대상으로
-                개발 경험과 프로젝트를 기업이 이해하는 언어로 바꾸고
-                커리어 경쟁력으로 연결하는 세션을 진행했습니다.
-              </p>
-
-              <div class="portfolio-tags">
-                <span>Career Strategy</span>
-                <span>Computer Science</span>
-                <span>Portfolio</span>
-              </div>
-
-            </div>
-          </article>
-
-
-          <!-- UNIVERSITY -->
-
-          <article class="portfolio-card">
-
-            <div class="portfolio-image">
-              <img
-                src="images/university-metaverse.jpg"
-                alt="한국공학대학교 진로취업 교육 프로그램"
-              >
-            </div>
-
-            <div class="portfolio-body">
-
-              <p class="portfolio-label">
-                UNIVERSITY CAREER EDUCATION
-              </p>
-
-              <h3>
-                이공계 청년 진로·취업 교육
-              </h3>
-
-              <p>
-                한국공학대학교, 호서대학교, 안산대학교 등에서
-                이공계 학생을 대상으로 직무 탐색, 취업 전략,
-                자기소개서, 면접, 커리어 설계 교육을 진행했습니다.
-              </p>
-
-              <div class="portfolio-tags">
-                <span>한국공학대학교</span>
-                <span>호서대학교</span>
-                <span>안산대학교</span>
-              </div>
-
-            </div>
-          </article>
-
-
-          <!-- DEVCHAT -->
-
-          <article class="portfolio-card">
-
-            <div class="portfolio-image">
-              <img
-                src="images/devchat-cio.jpg"
-                alt="Devchat Night 개발자 커뮤니티 행사"
-              >
-            </div>
-
-            <div class="portfolio-body">
-
-              <p class="portfolio-label">
-                DEVCHAT KOREA
-              </p>
-
-              <h3>
-                개발자와 기술 리더의 대화를 설계하다
-              </h3>
-
-              <p>
-                DevRel과 AI 시대의 조직 문화를 주제로 한
-                개발자 커뮤니티 행사의 기획·운영과
-                패널 모더레이션을 진행했습니다.
-              </p>
-
-              <div class="portfolio-tags">
-                <span>DevRel</span>
-                <span>Moderation</span>
-                <span>Community</span>
-              </div>
-
-            </div>
-          </article>
-
-        </div>
-
-
-        <div class="organization-box">
-
-          <p class="organization-title">
-            SPEAKING · EDUCATION · COMMUNITY EXPERIENCE
-          </p>
-
-          <div class="organization-list">
-            <span>Google</span>
-            <span>Microsoft</span>
-            <span>서울대학교</span>
-            <span>한국공학대학교</span>
-            <span>호서대학교</span>
-            <span>안산대학교</span>
-            <span>Devchat Korea</span>
-          </div>
-
-        </div>
-
+      <div class="impact-item">
+        <span class="impact-number">280+</span>
+        <span class="impact-label">Tech Candidate Interviews</span>
       </div>
-    </section>
 
-
-    <!-- DEVCHAT -->
-
-    <section class="section devchat" id="devchat">
-      <div class="container devchat-grid">
-
-        <div>
-
-          <p class="section-kicker">
-            COMMUNITY LEADERSHIP
-          </p>
-
-          <h2>Devchat Korea</h2>
-
-          <p class="devchat-role">
-            Organizer · Ops & Partnerships
-          </p>
-
-          <p class="devchat-copy">
-            한국 DevRel 커뮤니티 Devchat의 운영진으로 활동하며
-            개발자와 기술 리더가 연결되는 행사를
-            함께 기획하고 운영하고 있습니다.
-          </p>
-
-          <p class="devchat-copy">
-            커뮤니티에서 만나는 개발자와 기업의 이야기는
-            AI·Tech 채용 시장의 변화를 가장 가까이에서
-            이해할 수 있는 현장이기도 합니다.
-          </p>
-
-          <div class="devchat-points">
-
-            <div class="devchat-point">
-              Anthropic이 함께한 개발자 커뮤니티 행사 운영
-            </div>
-
-            <div class="devchat-point">
-              Notion이 함께한 Devchat Night 행사 운영
-            </div>
-
-            <div class="devchat-point">
-              Devchat Night 2025 · 2026 패널 모더레이션
-            </div>
-
-            <div class="devchat-point">
-              연사 · 스폰서 · 파트너 · 행사 운영 커뮤니케이션
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="devchat-photo">
-
-          <img
-            src="images/devchat-cio.jpg"
-            alt="Devchat Night 패널 토크"
-          >
-
-          <p class="photo-caption">
-            Devchat Night · CIO Korea
-          </p>
-
-        </div>
-
+      <div class="impact-item">
+        <span class="impact-number">10yr+</span>
+        <span class="impact-label">진로·취업·교육 현장 경험</span>
       </div>
-    </section>
+
+    </div>
+  </section>
 
 
-    <!-- PROGRAMS -->
+  <!-- ABOUT -->
 
-    <section class="section section-alt" id="programs">
-      <div class="container">
+  <section class="section" id="about">
+    <div class="container about-grid">
 
-        <p class="section-kicker">
-          EDUCATION PROGRAMS
-        </p>
+      <div>
+        <p class="section-kicker">ABOUT</p>
 
         <h2 class="section-title">
-          이런 교육을 함께할 수 있습니다.
+          채용 현장의 경험을<br>
+          교육으로 연결합니다.
         </h2>
+      </div>
+
+      <div class="about-copy">
+
+        <p>
+          대학교 진로취업센터, 개발자 부트캠프,
+          글로벌 서치펌에서 이공계 학생과 개발자의
+          진로와 취업을 가까이에서 다뤄왔습니다.
+        </p>
+
+        <p>
+          개발자를 직접 채용하고 수많은 이력서와 인터뷰를 검토한 경험을 바탕으로
+          실제 채용 현장에서 어떤 역량을 보고 어떻게 평가하는지를
+          교육에 담고 있습니다.
+        </p>
+
+        <p>
+          최근에는 AI로 달라지는 직업과 채용 시장,
+          생성형 AI 활용, Python과 블록코딩,
+          로봇·드론을 활용한 디지털 교육까지
+          교육 분야를 넓혀가고 있습니다.
+        </p>
+
+        <div class="expertise-list">
+
+          <div class="expertise">
+            <strong>AI & Career</strong>
+            <span>AI 시대 직업 변화와 진로 탐색</span>
+          </div>
+
+          <div class="expertise">
+            <strong>Tech Career</strong>
+            <span>개발자·이공계 취업과 채용 트렌드</span>
+          </div>
+
+          <div class="expertise">
+            <strong>AI & Coding</strong>
+            <span>생성형 AI·Python·블록코딩</span>
+          </div>
+
+          <div class="expertise">
+            <strong>Digital Learning</strong>
+            <span>로봇·드론을 활용한 체험형 교육</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SPEAKING -->
+
+  <section class="section section-alt" id="speaking">
+    <div class="container">
+
+      <div class="speaking-head">
+
+        <div>
+          <p class="section-kicker">SPEAKING & EDUCATION</p>
+          <h2 class="section-title">강연 및 교육</h2>
+        </div>
 
         <p class="section-description">
-          학교·대학교·교육기관·커뮤니티의 대상과 목적에 맞춰
-          특강부터 프로젝트형 수업까지 구성합니다.
+          대학, 글로벌 테크 기업, 개발자 커뮤니티 등에서
+          AI·Tech 커리어와 이공계 진로·취업을 주제로
+          강연과 교육을 진행했습니다.
         </p>
 
-
-        <div class="program-grid">
-
-          <article class="program-card">
-
-            <span class="program-number">01</span>
-
-            <h3>
-              AI 시대 진로·직무 특강
-            </h3>
-
-            <p>
-              AI가 직업과 일하는 방식을 어떻게 바꾸고 있는지 이해하고
-              자신의 진로와 연결하는 교육입니다.
-            </p>
-
-            <ul>
-              <li>AI 시대 직무 변화</li>
-              <li>미래 역량 탐색</li>
-              <li>생성형 AI 활용</li>
-              <li>대학생·청소년 진로 교육</li>
-            </ul>
-
-          </article>
-
-
-          <article class="program-card">
-
-            <span class="program-number">02</span>
-
-            <h3>
-              AI·Tech 취업 전략
-            </h3>
-
-            <p>
-              실제 테크 채용 현장에서 얻은 인사이트를 바탕으로
-              개발자와 이공계 인재의 취업 전략을 다룹니다.
-            </p>
-
-            <ul>
-              <li>AI 채용시장 트렌드</li>
-              <li>JD 분석</li>
-              <li>이력서·포트폴리오</li>
-              <li>면접 및 퍼스널 브랜딩</li>
-            </ul>
-
-          </article>
-
-
-          <article class="program-card">
-
-            <span class="program-number">03</span>
-
-            <h3>
-              AI·디지털 프로젝트 교육
-            </h3>
-
-            <p>
-              생성형 AI와 코딩을 활용해
-              학생이 직접 탐구하고 결과물을 만드는 프로젝트형 수업입니다.
-            </p>
-
-            <ul>
-              <li>Generative AI</li>
-              <li>Python</li>
-              <li>Entry Block Coding</li>
-              <li>PBL · Digital Citizenship</li>
-            </ul>
-
-          </article>
-
-        </div>
-
       </div>
-    </section>
 
 
-    <!-- CAREER -->
+      <div class="portfolio-grid">
 
-    <section class="section" id="career">
-      <div class="container">
+        <article class="portfolio-card">
 
-        <p class="section-kicker">
-          EXPERIENCE
-        </p>
+          <div class="portfolio-image">
+            <img
+              src="images/gdg-ai-career.png"
+              alt="Google Developer Group AI 커리어 강연"
+            >
+          </div>
 
-        <h2 class="section-title">
-          Career Journey
-        </h2>
+          <div class="portfolio-body">
 
+            <p class="portfolio-label">
+              GOOGLE DEVELOPER GROUP · MICROSOFT
+            </p>
 
-        <div class="career-grid">
+            <h3>
+              AI가 개발자를 대체할 수 있을까?
+            </h3>
 
-          <article class="career-item">
+            <p>
+              AI 시대 개발자 채용 시장의 변화와
+              앞으로 필요한 역량을 주제로
+              개발자와 취업준비생을 위한 강연을 진행했습니다.
+            </p>
 
-            <div class="career-meta">
-              <strong>Robert Walters Korea</strong>
-              <span>2024 — 2026</span>
-            </div>
-
-            <div class="career-content">
-              <h3>Candidate Manager, Technology</h3>
-
-              <p>
-                Backend, Frontend, DevOps, ML/AI 등
-                테크 직군의 후보자 인터뷰, Talent Mapping,
-                채용시장 분석 및 채용 프로젝트를 담당했습니다.
-              </p>
-            </div>
-
-          </article>
-
-
-          <article class="career-item">
-
-            <div class="career-meta">
-              <strong>Code States</strong>
-              <span>2022 — 2023</span>
-            </div>
-
-            <div class="career-content">
-              <h3>Career Coach</h3>
-
-              <p>
-                K-Digital Training 개발자 교육과 연계하여
-                이력서, 포트폴리오, 면접, 커리어 설계 프로그램과
-                1:1 코칭을 운영했습니다.
-              </p>
-            </div>
-
-          </article>
-
-
-          <article class="career-item">
-
-            <div class="career-meta">
-              <strong>University Career Education</strong>
-              <span>2016 — 2022</span>
-            </div>
-
-            <div class="career-content">
-              <h3>Career Consultant · Instructor</h3>
-
-              <p>
-                한국공학대학교, 호서대학교, 안산대학교 등
-                대학 현장에서 이공계 청년의 진로·취업 프로그램,
-                채용박람회 및 커리어 교육을 운영했습니다.
-              </p>
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section class="section contact" id="contact">
-      <div class="container contact-grid">
-
-        <div>
-
-          <p class="section-kicker">
-            CONTACT
-          </p>
-
-          <h2>
-            강의와 교육을<br>
-            함께 만들고 싶다면
-          </h2>
-
-          <p class="contact-copy">
-            대학·학교·교육기관·기업·커뮤니티의
-            AI 진로교육, Tech Career, 개발자 취업,
-            생성형 AI 교육 관련 문의를 받고 있습니다.
-          </p>
-
-          <p class="contact-copy">
-            대상, 인원, 시간, 원하는 교육 방향을 남겨주시면
-            확인 후 회신드리겠습니다.
-          </p>
-
-        </div>
-
-
-        <!--
-          Formspree 연결 필요
-          https://formspree.io 에서 무료 Form 생성 후
-          아래 YOUR_FORM_ID 부분만 교체하세요.
-        -->
-
-        <form
-          class="contact-form"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST"
-        >
-
-          <input
-            type="hidden"
-            name="_subject"
-            value="[Kate Hwang 웹사이트] 새로운 강의·협업 문의"
-          >
-
-
-          <div class="form-row">
-
-            <div class="form-group">
-              <label for="name">이름 / 담당자명</label>
-
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="홍길동"
-                required
-              >
-            </div>
-
-
-            <div class="form-group">
-              <label for="organization">기관명</label>
-
-              <input
-                type="text"
-                id="organization"
-                name="organization"
-                placeholder="기관 또는 회사명"
-              >
+            <div class="portfolio-tags">
+              <span>AI Career</span>
+              <span>Developer</span>
+              <span>Tech Recruiting</span>
             </div>
 
           </div>
+        </article>
 
+
+        <article class="portfolio-card">
+
+          <div class="portfolio-image">
+            <img
+              src="images/snu-career.jpg"
+              alt="서울대학교 개발자 커리어 강연"
+            >
+          </div>
+
+          <div class="portfolio-body">
+
+            <p class="portfolio-label">
+              SEOUL NATIONAL UNIVERSITY
+            </p>
+
+            <h3>
+              개발 경험을 커리어 경쟁력으로 바꾸기
+            </h3>
+
+            <p>
+              서울대학교 CS 커뮤니티를 대상으로
+              개발 프로젝트와 연구 경험을 기업이 이해하는 언어로 정리하고
+              커리어와 연결하는 방법을 다뤘습니다.
+            </p>
+
+            <div class="portfolio-tags">
+              <span>Career Strategy</span>
+              <span>Computer Science</span>
+              <span>Portfolio</span>
+            </div>
+
+          </div>
+        </article>
+
+
+        <article class="portfolio-card">
+
+          <div class="portfolio-image">
+            <img
+              src="images/university-metaverse.jpg"
+              alt="한국공학대학교 진로취업 교육"
+            >
+          </div>
+
+          <div class="portfolio-body">
+
+            <p class="portfolio-label">
+              UNIVERSITY CAREER EDUCATION
+            </p>
+
+            <h3>
+              이공계 청년 진로·취업 교육
+            </h3>
+
+            <p>
+              한국공학대학교, 호서대학교, 안산대학교 등에서
+              이공계 학생을 대상으로 진로 탐색부터 취업 전략,
+              자기소개서와 면접 교육까지 진행했습니다.
+            </p>
+
+            <div class="portfolio-tags">
+              <span>한국공학대학교</span>
+              <span>호서대학교</span>
+              <span>안산대학교</span>
+            </div>
+
+          </div>
+        </article>
+
+
+        <article class="portfolio-card">
+
+          <div class="portfolio-image">
+            <img
+              src="images/devchat-cio.jpg"
+              alt="Devchat Night 패널 모더레이션"
+            >
+          </div>
+
+          <div class="portfolio-body">
+
+            <p class="portfolio-label">
+              DEVCHAT KOREA
+            </p>
+
+            <h3>
+              개발자 커뮤니티 운영과 모더레이션
+            </h3>
+
+            <p>
+              개발자와 기술 리더가 만나는 커뮤니티 행사를 기획하고
+              DevRel과 AI 시대의 조직 문화를 주제로
+              패널 모더레이션을 진행했습니다.
+            </p>
+
+            <div class="portfolio-tags">
+              <span>DevRel</span>
+              <span>Moderation</span>
+              <span>Community</span>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+
+
+      <div class="organization-box">
+
+        <p class="organization-title">
+          SPEAKING · EDUCATION · COMMUNITY
+        </p>
+
+        <div class="organization-list">
+          <span>Google</span>
+          <span>Microsoft</span>
+          <span>서울대학교</span>
+          <span>한국공학대학교</span>
+          <span>호서대학교</span>
+          <span>안산대학교</span>
+          <span>Devchat Korea</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- EDUCATION FIELDS -->
+
+  <section class="section" id="education">
+    <div class="container">
+
+      <div class="education-intro">
+
+        <div>
+          <p class="section-kicker">EDUCATION</p>
+
+          <h2 class="section-title">
+            교육 가능 분야
+          </h2>
+        </div>
+
+        <div>
+
+          <p class="section-description">
+            초·중·고등학생부터 대학생, 개발자 커뮤니티,
+            방과후 교사까지 대상에 맞는 AI·진로·직무 교육을 진행합니다.
+          </p>
+
+          <div class="audience-tags">
+            <span>초등학생</span>
+            <span>중학생</span>
+            <span>고등학생</span>
+            <span>대학생</span>
+            <span>취업준비생</span>
+            <span>개발자</span>
+            <span>교사·강사</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="program-grid">
+
+        <!-- 01 -->
+
+        <article class="program-card">
+
+          <div class="program-icon">🧭</div>
+
+          <p class="program-label">
+            AI CAREER
+          </p>
+
+          <h3>
+            AI 시대 진로·직무 교육
+          </h3>
+
+          <p>
+            AI로 직업과 일하는 방식이 어떻게 달라지고 있는지 알아보고
+            자신의 관심 분야와 진로를 연결해보는 수업입니다.
+          </p>
+
+          <div class="program-list">
+            <span>AI 시대 직업 변화</span>
+            <span>미래 직업 탐색</span>
+            <span>진로 설계</span>
+            <span>AI 리터러시</span>
+          </div>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="program-card">
+
+          <div class="program-icon">💼</div>
+
+          <p class="program-label">
+            TECH CAREER
+          </p>
+
+          <h3>
+            개발자·이공계 취업 교육
+          </h3>
+
+          <p>
+            실제 테크 채용 현장에서 쌓은 경험을 바탕으로
+            채용 시장의 변화부터 이력서, 포트폴리오,
+            면접까지 취업에 필요한 내용을 다룹니다.
+          </p>
+
+          <div class="program-list">
+            <span>채용 트렌드</span>
+            <span>JD 분석</span>
+            <span>이력서</span>
+            <span>포트폴리오</span>
+            <span>면접</span>
+          </div>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="program-card">
+
+          <div class="program-icon">✨</div>
+
+          <p class="program-label">
+            GENERATIVE AI
+          </p>
+
+          <h3>
+            생성형 AI 활용 교육
+          </h3>
+
+          <p>
+            ChatGPT와 생성형 AI를 직접 사용해보며
+            질문하는 방법부터 정보 확인, 아이디어 만들기,
+            문제 해결까지 경험하는 수업입니다.
+          </p>
+
+          <div class="program-list">
+            <span>생성형 AI</span>
+            <span>프롬프트</span>
+            <span>AI 윤리</span>
+            <span>디지털 시민성</span>
+          </div>
+
+        </article>
+
+
+        <!-- 04 -->
+
+        <article class="program-card">
+
+          <div class="program-icon">🧩</div>
+
+          <p class="program-label">
+            BLOCK CODING
+          </p>
+
+          <h3>
+            엔트리·스크래치 블록코딩
+          </h3>
+
+          <p>
+            처음 코딩을 접하는 학생도 직접 움직이고 결과를 확인하면서
+            알고리즘과 프로그래밍의 기본 원리를 익힐 수 있도록 진행합니다.
+          </p>
+
+          <div class="program-list">
+            <span>엔트리</span>
+            <span>스크래치</span>
+            <span>게임 만들기</span>
+            <span>알고리즘</span>
+          </div>
+
+        </article>
+
+
+        <!-- 05 -->
+
+        <article class="program-card">
+
+          <div class="program-icon">🤖</div>
+
+          <p class="program-label">
+            ROBOT CODING
+          </p>
+
+          <h3>
+            핑퐁로봇·로봇 코딩
+          </h3>
+
+          <p>
+            코딩한 명령이 실제 로봇의 움직임으로 이어지는 과정을 경험하며
+            센서, 제어, 순서와 조건 같은 코딩 개념을 익히는 체험형 수업입니다.
+          </p>
+
+          <div class="program-list">
+            <span>핑퐁로봇</span>
+            <span>로봇 제어</span>
+            <span>센서</span>
+            <span>피지컬 컴퓨팅</span>
+          </div>
+
+        </article>
+
+
+        <!-- 06 -->
+
+        <article class="program-card">
+
+          <div class="program-icon">🚁</div>
+
+          <p class="program-label">
+            DRONE & PHYSICAL COMPUTING
+          </p>
+
+          <h3>
+            드론·피지컬 컴퓨팅 교육
+          </h3>
+
+          <p>
+            드론과 다양한 디지털 기기를 직접 제어하며
+            코딩이 실제 장치와 어떻게 연결되는지
+            실습을 통해 배우는 수업입니다.
+          </p>
+
+          <div class="program-list">
+            <span>드론</span>
+            <span>비행 원리</span>
+            <span>코딩 제어</span>
+            <span>프로젝트 수업</span>
+          </div>
+
+        </article>
+
+
+        <!-- 07 -->
+
+        <article class="program-card">
+
+          <div class="program-icon">🐍</div>
+
+          <p class="program-label">
+            PYTHON
+          </p>
+
+          <h3>
+            Python 기초 코딩
+          </h3>
+
+          <p>
+            간단한 문제 해결과 게임 만들기를 통해
+            변수, 조건문, 반복문, 함수 등
+            Python의 기본 개념을 익히는 수업입니다.
+          </p>
+
+          <div class="program-list">
+            <span>Python</span>
+            <span>Turtle</span>
+            <span>게임 만들기</span>
+            <span>문제 해결</span>
+          </div>
+
+        </article>
+
+
+        <!-- 08 -->
+
+        <article class="program-card">
+
+          <div class="program-icon">🌏</div>
+
+          <p class="program-label">
+            AI × PROJECT
+          </p>
+
+          <h3>
+            AI 융합 프로젝트 수업
+          </h3>
+
+          <p>
+            환경, 진로, 과학 등 하나의 주제를 정하고
+            AI와 코딩을 함께 활용해
+            학생이 직접 결과물을 만드는 프로젝트형 수업입니다.
+          </p>
+
+          <div class="program-list">
+            <span>PBL</span>
+            <span>AI</span>
+            <span>코딩</span>
+            <span>문제 해결</span>
+          </div>
+
+        </article>
+
+
+        <!-- 09 -->
+
+        <article class="program-card">
+
+          <div class="program-icon">👩‍🏫</div>
+
+          <p class="program-label">
+            TEACHER TRAINING
+          </p>
+
+          <h3>
+            교사·강사 대상 AI 활용 교육
+          </h3>
+
+          <p>
+            방과후 교사와 교육 강사가 수업 현장에서
+            생성형 AI와 디지털 도구를 실제로 활용할 수 있도록
+            실습 중심으로 진행합니다.
+          </p>
+
+          <div class="program-list">
+            <span>교사 연수</span>
+            <span>수업 설계</span>
+            <span>생성형 AI</span>
+            <span>교육 콘텐츠</span>
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <div class="future-note">
+        교육 대상과 수업 시간에 따라 한 가지 주제로 진행하거나,
+        AI + 진로, AI + 코딩, AI + 로봇처럼 여러 분야를 연결한 수업으로 구성할 수 있습니다.
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- DEVCHAT -->
+
+  <section class="section devchat" id="devchat">
+    <div class="container devchat-grid">
+
+      <div>
+
+        <p class="section-kicker">
+          COMMUNITY
+        </p>
+
+        <h2>Devchat Korea</h2>
+
+        <p class="devchat-role">
+          Organizer · Ops & Partnerships
+        </p>
+
+        <p class="devchat-copy">
+          한국 DevRel 커뮤니티 Devchat Korea의 운영진으로 활동하며
+          개발자와 기술 리더가 만나는 행사를 기획하고 운영하고 있습니다.
+        </p>
+
+        <p class="devchat-copy">
+          커뮤니티에서 직접 듣는 개발자와 기업의 이야기를 통해
+          빠르게 달라지는 AI·Tech 현장의 흐름을
+          강연과 교육에도 반영하고 있습니다.
+        </p>
+
+        <div class="devchat-points">
+
+          <div class="devchat-point">
+            Anthropic이 함께한 개발자 커뮤니티 행사 운영
+          </div>
+
+          <div class="devchat-point">
+            Notion이 함께한 Devchat Night 행사 운영
+          </div>
+
+          <div class="devchat-point">
+            Devchat Night 2025 · 2026 패널 모더레이션
+          </div>
+
+          <div class="devchat-point">
+            연사 · 스폰서 · 파트너 커뮤니케이션 및 현장 운영
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="devchat-photo">
+
+        <img
+          src="images/devchat-cio.jpg"
+          alt="Devchat Night 패널 토크"
+        >
+
+        <p class="photo-caption">
+          Devchat Night · CIO Korea
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CAREER -->
+
+  <section class="section" id="career">
+    <div class="container">
+
+      <p class="section-kicker">
+        EXPERIENCE
+      </p>
+
+      <h2 class="section-title">
+        주요 경력
+      </h2>
+
+
+      <div class="career-grid">
+
+        <article class="career-item">
+
+          <div class="career-meta">
+            <strong>Robert Walters Korea</strong>
+            <span>2024 — 2026</span>
+          </div>
+
+          <div class="career-content">
+
+            <h3>
+              Candidate Manager, Technology
+            </h3>
+
+            <p>
+              Backend, Frontend, DevOps, ML/AI 등 테크 직군을 대상으로
+              후보자 인터뷰, Talent Mapping, 채용시장 분석과
+              채용 프로젝트를 담당했습니다.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="career-item">
+
+          <div class="career-meta">
+            <strong>Code States</strong>
+            <span>2022 — 2023</span>
+          </div>
+
+          <div class="career-content">
+
+            <h3>
+              Career Coach
+            </h3>
+
+            <p>
+              K-Digital Training 개발자 교육과 연계해
+              이력서, 포트폴리오, 면접, 커리어 설계 프로그램과
+              1:1 코칭을 운영했습니다.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="career-item">
+
+          <div class="career-meta">
+            <strong>University Career Education</strong>
+            <span>2016 — 2022</span>
+          </div>
+
+          <div class="career-content">
+
+            <h3>
+              Career Consultant · Instructor
+            </h3>
+
+            <p>
+              한국공학대학교, 호서대학교, 안산대학교 등에서
+              이공계 청년의 진로·취업 교육과 상담,
+              기업 연계 프로그램 및 채용박람회를 운영했습니다.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+
+      <div>
+
+        <p class="section-kicker">
+          CONTACT
+        </p>
+
+        <h2>
+          강의·교육 문의
+        </h2>
+
+        <p class="contact-copy">
+          초·중·고등학교, 대학교, 교육기관,
+          개발자 커뮤니티, 교사 연수 등
+          AI 진로·직무 및 디지털 교육 문의를 받고 있습니다.
+        </p>
+
+        <p class="contact-copy">
+          원하는 교육 내용이 정해져 있지 않아도 괜찮습니다.
+          대상과 인원, 교육 시간을 알려주시면
+          그에 맞는 수업을 함께 정할 수 있습니다.
+        </p>
+
+      </div>
+
+
+      <!--
+        Formspree에서 Form을 만든 뒤
+        YOUR_FORM_ID만 실제 ID로 교체하세요.
+      -->
+
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+      >
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="[Kate Hwang 홈페이지] 새로운 강의·교육 문의"
+        >
+
+
+        <div class="form-row">
 
           <div class="form-group">
 
-            <label for="email">
-              회신받을 이메일
+            <label for="name">
+              이름 / 담당자명
             </label>
 
             <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="example@email.com"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="홍길동"
               required
             >
 
@@ -1480,77 +1731,148 @@
 
           <div class="form-group">
 
-            <label for="type">
-              문의 유형
+            <label for="organization">
+              기관명
             </label>
 
-            <select id="type" name="type">
-
-              <option value="AI 진로·직무 교육">
-                AI 진로·직무 교육
-              </option>
-
-              <option value="Tech Career 특강">
-                Tech Career 특강
-              </option>
-
-              <option value="생성형 AI 교육">
-                생성형 AI 교육
-              </option>
-
-              <option value="커리어 코칭">
-                커리어 코칭
-              </option>
-
-              <option value="행사·패널·모더레이션">
-                행사·패널·모더레이션
-              </option>
-
-              <option value="기타">
-                기타
-              </option>
-
-            </select>
+            <input
+              type="text"
+              id="organization"
+              name="organization"
+              placeholder="학교 또는 기관명"
+            >
 
           </div>
 
-
-          <div class="form-group">
-
-            <label for="message">
-              문의 내용
-            </label>
-
-            <textarea
-              id="message"
-              name="message"
-              placeholder="대상, 예상 인원, 일정, 원하는 교육 내용 등을 자유롭게 적어주세요."
-              required
-            ></textarea>
-
-          </div>
+        </div>
 
 
-          <button
-            type="submit"
-            class="submit-button"
+        <div class="form-group">
+
+          <label for="email">
+            회신받을 이메일
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@email.com"
+            required
           >
-            문의 보내기
-          </button>
 
-          <p class="form-note">
-            입력한 내용은 강의·협업 문의 확인을 위해서만 사용됩니다.
-          </p>
+        </div>
 
-        </form>
 
-      </div>
-    </section>
+        <div class="form-group">
 
-  </main>
+          <label for="audience">
+            교육 대상
+          </label>
+
+          <select id="audience" name="audience">
+
+            <option value="초등학생">초등학생</option>
+            <option value="중학생">중학생</option>
+            <option value="고등학생">고등학생</option>
+            <option value="대학생·취업준비생">대학생·취업준비생</option>
+            <option value="개발자">개발자</option>
+            <option value="교사·강사">교사·강사</option>
+            <option value="기타">기타</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="type">
+            관심 교육
+          </label>
+
+          <select id="type" name="type">
+
+            <option value="AI 진로·직무 교육">
+              AI 진로·직무 교육
+            </option>
+
+            <option value="개발자·이공계 취업 교육">
+              개발자·이공계 취업 교육
+            </option>
+
+            <option value="생성형 AI 교육">
+              생성형 AI 교육
+            </option>
+
+            <option value="엔트리·스크래치 블록코딩">
+              엔트리·스크래치 블록코딩
+            </option>
+
+            <option value="Python 교육">
+              Python 교육
+            </option>
+
+            <option value="핑퐁로봇·로봇 코딩">
+              핑퐁로봇·로봇 코딩
+            </option>
+
+            <option value="드론 교육">
+              드론 교육
+            </option>
+
+            <option value="AI 융합 프로젝트">
+              AI 융합 프로젝트
+            </option>
+
+            <option value="교사·강사 연수">
+              교사·강사 연수
+            </option>
+
+            <option value="기타">
+              기타
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="message">
+            문의 내용
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            placeholder="예상 인원, 교육 시간, 일정, 원하는 내용을 자유롭게 적어주세요."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="submit-button"
+        >
+          문의 보내기
+        </button>
+
+        <p class="form-note">
+          보내주신 내용은 강의·교육 문의 확인을 위해서만 사용됩니다.
+        </p>
+
+      </form>
+
+    </div>
+  </section>
 
 
   <footer>
+
     <div class="container footer-inner">
 
       <span>
@@ -1562,8 +1884,8 @@
       </span>
 
     </div>
-  </footer>
 
+  </footer>
 
 </body>
 </html>
