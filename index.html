@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="AI 진로·직무 교육, 개발자 커리어, 생성형 AI, 코딩·로봇 융합교육을 진행하는 Kate Hwang의 강의 포트폴리오"
+    content="AI 진로·직무 교육, 개발자 커리어, 생성형 AI, 코딩·로봇·드론 교육을 진행하는 Kate Hwang의 강의 포트폴리오"
   >
 
   <title>Kate Hwang | AI Career & Tech Education</title>
@@ -420,7 +420,7 @@
       letter-spacing: -.03em;
     }
 
-    /* EDUCATION FIELDS */
+    /* EDUCATION */
 
     .education-intro {
       display: grid;
@@ -538,7 +538,7 @@
 
     .devchat-grid {
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
+      grid-template-columns: .9fr 1.1fr;
       gap: 70px;
       align-items: center;
     }
@@ -561,18 +561,70 @@
       font-size: 17px;
     }
 
-    .devchat-points {
-      display: grid;
-      gap: 12px;
-      margin-top: 30px;
+    .sponsor-block {
+      margin-top: 36px;
+      padding: 28px;
+      border: 1px solid #2a3441;
+      border-radius: 16px;
+      background: #161b22;
     }
 
-    .devchat-point {
-      padding: 14px 17px;
-      border: 1px solid #2a3441;
+    .sponsor-label {
+      margin-bottom: 20px;
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .sponsor-logos {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 34px;
+    }
+
+    .sponsor-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      height: 65px;
+      padding: 12px 18px;
       border-radius: 10px;
-      background: #161b22;
-      color: #dbe4ef;
+      background: white;
+    }
+
+    .sponsor-logo img {
+      width: auto;
+      max-width: 130px;
+      max-height: 38px;
+      object-fit: contain;
+    }
+
+    .sponsor-copy {
+      margin-top: 22px;
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    .devchat-highlight {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-left: 3px solid #60a5fa;
+    }
+
+    .devchat-highlight strong {
+      display: block;
+      color: white;
+      font-size: 16px;
+    }
+
+    .devchat-highlight span {
+      display: block;
+      margin-top: 5px;
+      color: #94a3b8;
+      font-size: 13px;
     }
 
     .devchat-photo {
@@ -587,9 +639,16 @@
     }
 
     .photo-caption {
-      padding: 13px 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 14px 17px;
       color: #94a3b8;
       font-size: 12px;
+    }
+
+    .photo-caption strong {
+      color: #e2e8f0;
     }
 
     /* CAREER */
@@ -837,10 +896,12 @@
 <body>
 
   <!-- NAV -->
-
   <div class="nav-wrap">
     <div class="container nav">
-      <a class="brand" href="#top">Kate Hwang</a>
+
+      <a class="brand" href="#top">
+        Kate Hwang
+      </a>
 
       <div class="nav-links">
         <a href="#about">About</a>
@@ -850,12 +911,12 @@
         <a href="#career">경력</a>
         <a href="#contact" class="nav-contact">강의 문의</a>
       </div>
+
     </div>
   </div>
 
 
   <!-- HERO -->
-
   <header class="hero" id="top">
     <div class="container">
 
@@ -880,6 +941,7 @@
       </p>
 
       <div class="hero-buttons">
+
         <a href="#contact" class="button button-primary">
           강의·교육 문의
         </a>
@@ -887,6 +949,7 @@
         <a href="#speaking" class="button button-secondary">
           강연 포트폴리오 보기
         </a>
+
       </div>
 
       <div class="hero-tags">
@@ -904,7 +967,6 @@
 
 
   <!-- IMPACT -->
-
   <section>
     <div class="container impact-grid">
 
@@ -933,18 +995,22 @@
 
 
   <!-- ABOUT -->
-
   <section class="section" id="about">
     <div class="container about-grid">
 
       <div>
-        <p class="section-kicker">ABOUT</p>
+
+        <p class="section-kicker">
+          ABOUT
+        </p>
 
         <h2 class="section-title">
           채용 현장의 경험을<br>
           교육으로 연결합니다.
         </h2>
+
       </div>
+
 
       <div class="about-copy">
 
@@ -992,20 +1058,25 @@
         </div>
 
       </div>
+
     </div>
   </section>
 
 
   <!-- SPEAKING -->
-
   <section class="section section-alt" id="speaking">
     <div class="container">
 
       <div class="speaking-head">
 
         <div>
-          <p class="section-kicker">SPEAKING & EDUCATION</p>
-          <h2 class="section-title">강연 및 교육</h2>
+          <p class="section-kicker">
+            SPEAKING & EDUCATION
+          </p>
+
+          <h2 class="section-title">
+            강연 및 교육
+          </h2>
         </div>
 
         <p class="section-description">
@@ -1019,6 +1090,7 @@
 
       <div class="portfolio-grid">
 
+        <!-- GOOGLE / MICROSOFT -->
         <article class="portfolio-card">
 
           <div class="portfolio-image">
@@ -1039,9 +1111,9 @@
             </h3>
 
             <p>
+              Google Developer Group 행사와 Microsoft에서
               AI 시대 개발자 채용 시장의 변화와
-              앞으로 필요한 역량을 주제로
-              개발자와 취업준비생을 위한 강연을 진행했습니다.
+              앞으로 필요한 역량을 주제로 강연했습니다.
             </p>
 
             <div class="portfolio-tags">
@@ -1051,9 +1123,11 @@
             </div>
 
           </div>
+
         </article>
 
 
+        <!-- SEOUL NATIONAL UNIVERSITY -->
         <article class="portfolio-card">
 
           <div class="portfolio-image">
@@ -1086,9 +1160,11 @@
             </div>
 
           </div>
+
         </article>
 
 
+        <!-- UNIVERSITY -->
         <article class="portfolio-card">
 
           <div class="portfolio-image">
@@ -1121,9 +1197,11 @@
             </div>
 
           </div>
+
         </article>
 
 
+        <!-- DEVCHAT -->
         <article class="portfolio-card">
 
           <div class="portfolio-image">
@@ -1144,7 +1222,7 @@
             </h3>
 
             <p>
-              개발자와 기술 리더가 만나는 커뮤니티 행사를 기획하고
+              개발자와 기술 리더가 만나는 커뮤니티 행사를 기획하고,
               DevRel과 AI 시대의 조직 문화를 주제로
               패널 모더레이션을 진행했습니다.
             </p>
@@ -1156,6 +1234,7 @@
             </div>
 
           </div>
+
         </article>
 
       </div>
@@ -1183,20 +1262,24 @@
   </section>
 
 
-  <!-- EDUCATION FIELDS -->
-
+  <!-- EDUCATION -->
   <section class="section" id="education">
     <div class="container">
 
       <div class="education-intro">
 
         <div>
-          <p class="section-kicker">EDUCATION</p>
+
+          <p class="section-kicker">
+            EDUCATION
+          </p>
 
           <h2 class="section-title">
             교육 가능 분야
           </h2>
+
         </div>
+
 
         <div>
 
@@ -1223,10 +1306,11 @@
       <div class="program-grid">
 
         <!-- 01 -->
-
         <article class="program-card">
 
-          <div class="program-icon">🧭</div>
+          <div class="program-icon">
+            🧭
+          </div>
 
           <p class="program-label">
             AI CAREER
@@ -1252,10 +1336,11 @@
 
 
         <!-- 02 -->
-
         <article class="program-card">
 
-          <div class="program-icon">💼</div>
+          <div class="program-icon">
+            💼
+          </div>
 
           <p class="program-label">
             TECH CAREER
@@ -1283,10 +1368,11 @@
 
 
         <!-- 03 -->
-
         <article class="program-card">
 
-          <div class="program-icon">✨</div>
+          <div class="program-icon">
+            ✨
+          </div>
 
           <p class="program-label">
             GENERATIVE AI
@@ -1313,10 +1399,11 @@
 
 
         <!-- 04 -->
-
         <article class="program-card">
 
-          <div class="program-icon">🧩</div>
+          <div class="program-icon">
+            🧩
+          </div>
 
           <p class="program-label">
             BLOCK CODING
@@ -1342,10 +1429,11 @@
 
 
         <!-- 05 -->
-
         <article class="program-card">
 
-          <div class="program-icon">🤖</div>
+          <div class="program-icon">
+            🤖
+          </div>
 
           <p class="program-label">
             ROBOT CODING
@@ -1357,7 +1445,7 @@
 
           <p>
             코딩한 명령이 실제 로봇의 움직임으로 이어지는 과정을 경험하며
-            센서, 제어, 순서와 조건 같은 코딩 개념을 익히는 체험형 수업입니다.
+            센서, 제어, 순서와 조건 같은 코딩 개념을 익히는 수업입니다.
           </p>
 
           <div class="program-list">
@@ -1371,17 +1459,18 @@
 
 
         <!-- 06 -->
-
         <article class="program-card">
 
-          <div class="program-icon">🚁</div>
+          <div class="program-icon">
+            🚁
+          </div>
 
           <p class="program-label">
-            DRONE & PHYSICAL COMPUTING
+            DRONE
           </p>
 
           <h3>
-            드론·피지컬 컴퓨팅 교육
+            드론·피지컬 컴퓨팅
           </h3>
 
           <p>
@@ -1401,10 +1490,11 @@
 
 
         <!-- 07 -->
-
         <article class="program-card">
 
-          <div class="program-icon">🐍</div>
+          <div class="program-icon">
+            🐍
+          </div>
 
           <p class="program-label">
             PYTHON
@@ -1431,10 +1521,11 @@
 
 
         <!-- 08 -->
-
         <article class="program-card">
 
-          <div class="program-icon">🌏</div>
+          <div class="program-icon">
+            🌏
+          </div>
 
           <p class="program-label">
             AI × PROJECT
@@ -1461,10 +1552,11 @@
 
 
         <!-- 09 -->
-
         <article class="program-card">
 
-          <div class="program-icon">👩‍🏫</div>
+          <div class="program-icon">
+            👩‍🏫
+          </div>
 
           <p class="program-label">
             TEACHER TRAINING
@@ -1502,7 +1594,6 @@
 
 
   <!-- DEVCHAT -->
-
   <section class="section devchat" id="devchat">
     <div class="container devchat-grid">
 
@@ -1512,7 +1603,9 @@
           COMMUNITY
         </p>
 
-        <h2>Devchat Korea</h2>
+        <h2>
+          Devchat Korea
+        </h2>
 
         <p class="devchat-role">
           Organizer · Ops & Partnerships
@@ -1523,29 +1616,50 @@
           개발자와 기술 리더가 만나는 행사를 기획하고 운영하고 있습니다.
         </p>
 
-        <p class="devchat-copy">
-          커뮤니티에서 직접 듣는 개발자와 기업의 이야기를 통해
-          빠르게 달라지는 AI·Tech 현장의 흐름을
-          강연과 교육에도 반영하고 있습니다.
-        </p>
 
-        <div class="devchat-points">
+        <div class="sponsor-block">
 
-          <div class="devchat-point">
-            Anthropic이 함께한 개발자 커뮤니티 행사 운영
+          <p class="sponsor-label">
+            EVENT SPONSORS
+          </p>
+
+          <div class="sponsor-logos">
+
+            <div class="sponsor-logo">
+              <img
+                src="images/anthropic-logo.svg"
+                alt="Anthropic"
+              >
+            </div>
+
+            <div class="sponsor-logo">
+              <img
+                src="images/notion-logo.svg"
+                alt="Notion"
+              >
+            </div>
+
           </div>
 
-          <div class="devchat-point">
-            Notion이 함께한 Devchat Night 행사 운영
-          </div>
 
-          <div class="devchat-point">
-            Devchat Night 2025 · 2026 패널 모더레이션
-          </div>
+          <p class="sponsor-copy">
+            Anthropic과 Notion이 스폰서로 참여한
+            Devchat 커뮤니티 행사의 기획과 운영에 참여하고,
+            패널 세션 모더레이터로 무대에 섰습니다.
+          </p>
 
-          <div class="devchat-point">
-            연사 · 스폰서 · 파트너 커뮤니케이션 및 현장 운영
-          </div>
+        </div>
+
+
+        <div class="devchat-highlight">
+
+          <strong>
+            Devchat Night 2025 · 2026
+          </strong>
+
+          <span>
+            행사 기획 · 연사 및 스폰서 커뮤니케이션 · 패널 모더레이션
+          </span>
 
         </div>
 
@@ -1556,12 +1670,20 @@
 
         <img
           src="images/devchat-cio.jpg"
-          alt="Devchat Night 패널 토크"
+          alt="Devchat Night 패널 모더레이션"
         >
 
-        <p class="photo-caption">
-          Devchat Night · CIO Korea
-        </p>
+        <div class="photo-caption">
+
+          <strong>
+            Devchat Night
+          </strong>
+
+          <span>
+            Panel Moderator · CIO Korea
+          </span>
+
+        </div>
 
       </div>
 
@@ -1570,7 +1692,6 @@
 
 
   <!-- CAREER -->
-
   <section class="section" id="career">
     <div class="container">
 
@@ -1663,7 +1784,6 @@
 
 
   <!-- CONTACT -->
-
   <section class="section contact" id="contact">
     <div class="container contact-grid">
 
@@ -1770,15 +1890,38 @@
             교육 대상
           </label>
 
-          <select id="audience" name="audience">
+          <select
+            id="audience"
+            name="audience"
+          >
 
-            <option value="초등학생">초등학생</option>
-            <option value="중학생">중학생</option>
-            <option value="고등학생">고등학생</option>
-            <option value="대학생·취업준비생">대학생·취업준비생</option>
-            <option value="개발자">개발자</option>
-            <option value="교사·강사">교사·강사</option>
-            <option value="기타">기타</option>
+            <option value="초등학생">
+              초등학생
+            </option>
+
+            <option value="중학생">
+              중학생
+            </option>
+
+            <option value="고등학생">
+              고등학생
+            </option>
+
+            <option value="대학생·취업준비생">
+              대학생·취업준비생
+            </option>
+
+            <option value="개발자">
+              개발자
+            </option>
+
+            <option value="교사·강사">
+              교사·강사
+            </option>
+
+            <option value="기타">
+              기타
+            </option>
 
           </select>
 
@@ -1791,7 +1934,10 @@
             관심 교육
           </label>
 
-          <select id="type" name="type">
+          <select
+            id="type"
+            name="type"
+          >
 
             <option value="AI 진로·직무 교육">
               AI 진로·직무 교육
@@ -1871,6 +2017,7 @@
   </section>
 
 
+  <!-- FOOTER -->
   <footer>
 
     <div class="container footer-inner">
