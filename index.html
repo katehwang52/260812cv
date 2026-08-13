@@ -6,12 +6,27 @@
 
   <meta
     name="description"
-    content="AI 진로·직무 교육, 개발자 커리어, 생성형 AI, 코딩·로봇·드론 교육을 진행하는 Kate Hwang의 강의 포트폴리오"
+    content="AI 진로·직무 교육, 개발자 커리어, 생성형 AI, 코딩·로봇·드론 교육을 진행하는 Kate Hwang의 포트폴리오"
   >
 
-  <title>Kate Hwang | AI Career & Tech Education</title>
+  <title>Kate Hwang | AI Career Lab</title>
 
   <style>
+    :root {
+      --bg: #f3f1e8;
+      --paper: #fffdf5;
+      --ink: #111111;
+      --muted: #686868;
+      --line: #111111;
+      --lime: #c8ff2f;
+      --blue: #315bff;
+      --light-blue: #dce5ff;
+      --soft: #e8e5db;
+      --dark: #11151c;
+      --dark-2: #1c222c;
+      --white: #ffffff;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -29,9 +44,9 @@
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
-      color: #111827;
-      background: #ffffff;
-      line-height: 1.7;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
       word-break: keep-all;
     }
 
@@ -42,7 +57,7 @@
 
     img {
       display: block;
-      width: 100%;
+      max-width: 100%;
     }
 
     button,
@@ -53,970 +68,1225 @@
     }
 
     .container {
-      width: min(1180px, calc(100% - 48px));
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
+    }
+
+    .mono {
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
     }
 
     .section {
       padding: 110px 0;
     }
 
-    .section-alt {
-      background: #f7f9fc;
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
-    .section-kicker {
-      color: #2563eb;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .12em;
+    .kicker::before {
+      content: "";
+      width: 26px;
+      height: 3px;
+      background: var(--ink);
     }
 
     .section-title {
-      margin-top: 12px;
-      font-size: clamp(34px, 4vw, 52px);
-      line-height: 1.2;
-      letter-spacing: -.04em;
-    }
-
-    .section-description {
-      margin-top: 18px;
-      max-width: 720px;
-      color: #6b7280;
-      font-size: 17px;
-    }
-
-    /* NAV */
-
-    .nav-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .nav {
-      min-height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .brand {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -.03em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #4b5563;
-    }
-
-    .nav-links a:hover {
-      color: #2563eb;
-    }
-
-    .nav-contact {
-      padding: 10px 18px;
-      border-radius: 999px;
-      color: white !important;
-      background: #111827;
-    }
-
-    /* HERO */
-
-    .hero {
-      padding: 120px 0 105px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 82% 20%, #dbeafe 0, transparent 27%),
-        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
-    }
-
-    .hero .eyebrow {
-      color: #2563eb;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .12em;
-    }
-
-    .hero h1 {
-      margin-top: 22px;
-      max-width: 900px;
-      font-size: clamp(44px, 6vw, 76px);
+      margin-top: 16px;
+      font-size: clamp(38px, 5vw, 64px);
       line-height: 1.08;
       letter-spacing: -.055em;
       font-weight: 850;
     }
 
+    .section-description {
+      max-width: 660px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* ========================================
+       NAV
+    ======================================== */
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(243, 241, 232, .96);
+      border-bottom: 2px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      font-size: 19px;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--line);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+      transform: rotate(-3deg);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--ink);
+    }
+
+    .nav-contact {
+      padding: 9px 16px !important;
+      border: 2px solid var(--ink) !important;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    /* ========================================
+       HERO
+    ======================================== */
+
+    .hero {
+      padding: 74px 0 46px;
+      border-bottom: 2px solid var(--line);
+      background:
+        linear-gradient(rgba(17,17,17,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,17,17,.055) 1px, transparent 1px),
+        var(--paper);
+      background-size: 30px 30px;
+    }
+
+    .hero-ticket {
+      border: 3px solid var(--line);
+      background: var(--paper);
+      box-shadow: 10px 10px 0 var(--ink);
+    }
+
+    .hero-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 15px 20px;
+      border-bottom: 2px solid var(--line);
+      background: var(--lime);
+    }
+
+    .hero-topbar-left,
+    .hero-topbar-right {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .hero-body {
+      display: grid;
+      grid-template-columns: 1.55fr .45fr;
+      min-height: 540px;
+    }
+
+    .hero-main {
+      padding: 66px 56px 56px;
+      border-right: 2px solid var(--line);
+    }
+
+    .hero-code {
+      margin-bottom: 24px;
+      color: var(--blue);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      font-size: clamp(52px, 7vw, 88px);
+      line-height: .98;
+      letter-spacing: -.07em;
+      font-weight: 900;
+    }
+
     .hero h1 span {
-      color: #2563eb;
+      display: inline-block;
+      margin-top: 8px;
+      padding: 3px 10px 7px;
+      background: var(--lime);
+      border: 2px solid var(--ink);
     }
 
     .hero-copy {
-      margin-top: 30px;
-      max-width: 780px;
-      color: #4b5563;
-      font-size: 20px;
+      max-width: 720px;
+      margin-top: 32px;
+      font-size: 19px;
+      color: #3e3e3e;
     }
 
     .hero-subcopy {
+      max-width: 700px;
       margin-top: 14px;
-      max-width: 780px;
-      color: #6b7280;
-      font-size: 16px;
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 38px;
+      gap: 10px;
+      margin-top: 34px;
     }
 
-    .button {
+    .btn {
+      min-height: 48px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 24px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: .2s ease;
-    }
-
-    .button-primary {
-      color: white;
-      background: #2563eb;
-    }
-
-    .button-primary:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
-    }
-
-    .button-secondary {
-      border: 1px solid #d1d5db;
-      background: white;
-    }
-
-    .button-secondary:hover {
-      color: #2563eb;
-      border-color: #2563eb;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
       gap: 10px;
-      margin-top: 55px;
-    }
-
-    .hero-tags span {
-      padding: 8px 13px;
-      border: 1px solid #dbe2ea;
-      border-radius: 999px;
-      background: rgba(255,255,255,.8);
-      color: #374151;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    /* IMPACT */
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid #d1d5db;
-      border-bottom: 1px solid #d1d5db;
-    }
-
-    .impact-item {
-      padding: 45px 30px;
-      border-right: 1px solid #d1d5db;
-    }
-
-    .impact-item:last-child {
-      border-right: 0;
-    }
-
-    .impact-number {
-      display: block;
-      color: #2563eb;
-      font-size: 42px;
-      line-height: 1;
+      padding: 0 20px;
+      border: 2px solid var(--ink);
+      font-size: 14px;
       font-weight: 850;
+      transition: .18s ease;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      transform: translate(-2px,-2px);
+      box-shadow: 5px 5px 0 var(--blue);
+    }
+
+    .btn-secondary {
+      background: var(--paper);
+    }
+
+    .btn-secondary:hover {
+      background: var(--lime);
+    }
+
+    .hero-side {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+    }
+
+    .hero-data {
+      padding: 26px 22px;
+      border-bottom: 2px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-data:last-child {
+      border-bottom: 0;
+    }
+
+    .hero-data-label {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      color: var(--muted);
+    }
+
+    .hero-data strong {
+      margin-top: 14px;
+      font-size: 35px;
+      line-height: 1;
       letter-spacing: -.04em;
     }
 
-    .impact-label {
-      display: block;
-      margin-top: 13px;
-      color: #4b5563;
-      font-size: 14px;
-      font-weight: 600;
+    .hero-data span {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
     }
 
-    /* ABOUT */
+    .hero-data.highlight {
+      background: var(--light-blue);
+    }
 
-    .about-grid {
+    /* ========================================
+       TRACK
+    ======================================== */
+
+    .track-wrap {
+      padding: 18px 0;
+      background: var(--ink);
+      color: var(--white);
+      overflow: hidden;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .track {
+      display: flex;
+      gap: 36px;
+      white-space: nowrap;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    .track span::after {
+      content: "→";
+      margin-left: 36px;
+      color: var(--lime);
+    }
+
+    /* ========================================
+       ABOUT
+    ======================================== */
+
+    .about-layout {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 90px;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 74px;
       align-items: start;
     }
 
+    .about-stamp {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 16px;
+      border: 3px solid var(--blue);
+      color: var(--blue);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 12px;
+      font-weight: 900;
+      transform: rotate(-2deg);
+    }
+
     .about-copy {
-      color: #374151;
       font-size: 18px;
     }
 
     .about-copy p + p {
-      margin-top: 22px;
+      margin-top: 24px;
     }
 
-    .expertise-list {
+    .about-copy strong {
+      background: linear-gradient(transparent 60%, var(--lime) 60%);
+    }
+
+    .about-modules {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 35px;
+      gap: 0;
+      margin-top: 38px;
+      border: 2px solid var(--line);
     }
 
-    .expertise {
-      padding: 20px;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      background: #f8fafc;
+    .about-module {
+      padding: 24px;
+      min-height: 132px;
+      border-right: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      background: var(--paper);
     }
 
-    .expertise strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 15px;
+    .about-module:nth-child(2n) {
+      border-right: 0;
     }
 
-    .expertise span {
-      color: #6b7280;
-      font-size: 14px;
+    .about-module:nth-last-child(-n+2) {
+      border-bottom: 0;
     }
 
-    /* SPEAKING */
+    .about-module .num {
+      color: var(--blue);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 11px;
+      font-weight: 900;
+    }
 
-    .speaking-head {
+    .about-module h3 {
+      margin-top: 11px;
+      font-size: 18px;
+    }
+
+    .about-module p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ========================================
+       SPEAKING LOG
+    ======================================== */
+
+    .speaking {
+      background: var(--blue);
+      color: var(--white);
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+    }
+
+    .speaking .kicker::before {
+      background: var(--white);
+    }
+
+    .speaking .section-description {
+      color: #dfe5ff;
+    }
+
+    .log-header {
       display: flex;
       justify-content: space-between;
-      align-items: end;
-      gap: 40px;
-      margin-bottom: 50px;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-    }
-
-    .portfolio-card {
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      background: white;
-      transition: .25s ease;
-    }
-
-    .portfolio-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 22px 50px rgba(15,23,42,.09);
-    }
-
-    /* 사진 전체가 보이도록 수정 */
-    .portfolio-image {
-      height: 380px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      overflow: hidden;
-      background: #f3f4f6;
-    }
-
-    .portfolio-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      transition: .35s ease;
-    }
-
-    .portfolio-card:hover img {
-      transform: scale(1.015);
-    }
-
-    .portfolio-body {
-      padding: 28px;
-    }
-
-    .portfolio-label {
-      margin-bottom: 10px;
-      color: #2563eb;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .08em;
-    }
-
-    .portfolio-body h3 {
-      font-size: 24px;
-      line-height: 1.35;
-      letter-spacing: -.025em;
-    }
-
-    .portfolio-body p {
-      margin-top: 12px;
-      color: #6b7280;
-      font-size: 15px;
-    }
-
-    .portfolio-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .portfolio-tags span {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #eff6ff;
-      color: #1d4ed8;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .organization-box {
-      margin-top: 70px;
-      padding-top: 38px;
-      border-top: 1px solid #e5e7eb;
-    }
-
-    .organization-title {
-      margin-bottom: 22px;
-      color: #9ca3af;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .1em;
-    }
-
-    .organization-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px 32px;
-    }
-
-    .organization-list span {
-      color: #374151;
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -.03em;
-    }
-
-    /* EDUCATION */
-
-    .education-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 30px;
       align-items: end;
       margin-bottom: 48px;
     }
 
-    .audience-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 24px;
-    }
-
-    .audience-tags span {
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: #eaf2ff;
-      color: #1d4ed8;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .program-grid {
+    .log-grid {
+      border: 2px solid var(--ink);
+      background: var(--ink);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
     }
 
-    .program-card {
-      min-height: 325px;
-      padding: 32px;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      background: white;
-      transition: .2s;
+    .log-card {
+      background: var(--paper);
+      color: var(--ink);
     }
 
-    .program-card:hover {
-      transform: translateY(-4px);
-      border-color: #bfdbfe;
-      box-shadow: 0 18px 45px rgba(15,23,42,.06);
-    }
-
-    .program-label {
-      color: #2563eb;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .08em;
-    }
-
-    .program-card h3 {
-      margin-top: 10px;
-      font-size: 22px;
-      line-height: 1.4;
-      letter-spacing: -.025em;
-    }
-
-    .program-card p {
-      margin-top: 13px;
-      color: #6b7280;
-      font-size: 15px;
-    }
-
-    .program-list {
+    .log-image {
+      height: 390px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 20px;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(rgba(17,17,17,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,17,17,.05) 1px, transparent 1px),
+        #ecebe5;
+      background-size: 20px 20px;
+      padding: 16px;
+      border-bottom: 2px solid var(--ink);
     }
 
-    .program-list span {
-      padding: 6px 9px;
-      border-radius: 6px;
-      background: #f3f4f6;
-      color: #4b5563;
-      font-size: 12px;
-      font-weight: 600;
+    .log-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
-    .future-note {
-      margin-top: 30px;
-      padding: 22px 25px;
-      border-left: 4px solid #2563eb;
-      border-radius: 0 10px 10px 0;
-      background: #eff6ff;
-      color: #374151;
+    .log-content {
+      padding: 26px 28px 28px;
+    }
+
+    .log-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      color: var(--blue);
+    }
+
+    .log-card h3 {
+      margin-top: 14px;
+      font-size: 27px;
+      line-height: 1.25;
+      letter-spacing: -.035em;
+    }
+
+    .log-card p {
+      margin-top: 12px;
+      color: var(--muted);
       font-size: 14px;
     }
 
-    /* DEVCHAT */
+    .log-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+    }
+
+    .log-tags span {
+      padding: 5px 8px;
+      border: 1.5px solid var(--ink);
+      font-size: 10px;
+      font-weight: 800;
+      background: var(--lime);
+    }
+
+    .org-strip {
+      margin-top: 38px;
+      padding: 22px;
+      border: 2px solid var(--white);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 28px;
+      align-items: center;
+    }
+
+    .org-strip-label {
+      color: var(--lime);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .org-strip span:not(.org-strip-label) {
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    /* ========================================
+       EDUCATION MODULES
+    ======================================== */
+
+    .education-head {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .audiences {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 22px;
+    }
+
+    .audiences span {
+      padding: 7px 10px;
+      border: 2px solid var(--ink);
+      font-size: 11px;
+      font-weight: 800;
+      background: var(--paper);
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 2px solid var(--line);
+      background: var(--line);
+      gap: 2px;
+    }
+
+    .module {
+      position: relative;
+      min-height: 330px;
+      padding: 28px;
+      background: var(--paper);
+    }
+
+    .module:nth-child(1),
+    .module:nth-child(5),
+    .module:nth-child(9) {
+      background: var(--lime);
+    }
+
+    .module:nth-child(3),
+    .module:nth-child(7) {
+      background: var(--light-blue);
+    }
+
+    .module-index {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 11px;
+      font-weight: 900;
+      opacity: .55;
+    }
+
+    .module-label {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .module h3 {
+      margin-top: 32px;
+      font-size: 23px;
+      line-height: 1.3;
+      letter-spacing: -.03em;
+    }
+
+    .module p {
+      margin-top: 14px;
+      color: #4d4d4d;
+      font-size: 14px;
+    }
+
+    .module-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 22px;
+    }
+
+    .module-tags span {
+      padding: 5px 7px;
+      background: var(--white);
+      border: 1.5px solid var(--ink);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .combine-box {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      border: 2px solid var(--line);
+      background: var(--paper);
+    }
+
+    .combine-label {
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: var(--ink);
+      color: var(--lime);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .combine-copy {
+      padding: 24px 28px;
+      font-size: 14px;
+    }
+
+    /* ========================================
+       DEVCHAT
+    ======================================== */
 
     .devchat {
-      color: white;
-      background: #0d1117;
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+        var(--dark);
+      background-size: 28px 28px;
+      color: var(--white);
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
     }
 
-    .devchat .section-kicker {
-      color: #60a5fa;
+    .devchat .kicker::before {
+      background: var(--lime);
     }
 
-    .devchat-grid {
+    .devchat .kicker {
+      color: var(--lime);
+    }
+
+    .devchat-layout {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
-      gap: 70px;
+      gap: 60px;
       align-items: center;
     }
 
     .devchat h2 {
-      margin-top: 12px;
-      font-size: clamp(40px, 5vw, 62px);
-      letter-spacing: -.05em;
+      margin-top: 14px;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1;
+      letter-spacing: -.06em;
     }
 
     .devchat-role {
-      margin-top: 10px;
-      color: #60a5fa;
-      font-weight: 700;
+      margin-top: 14px;
+      color: var(--lime);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 12px;
+      font-weight: 900;
     }
 
     .devchat-copy {
       margin-top: 25px;
-      color: #cbd5e1;
-      font-size: 17px;
+      color: #c6ccd5;
+      font-size: 16px;
     }
 
-    .sponsor-block {
-      margin-top: 36px;
-      padding: 28px;
-      border: 1px solid #2a3441;
-      border-radius: 16px;
-      background: #161b22;
+    .sponsor-panel {
+      margin-top: 32px;
+      border: 2px solid #4e5663;
+      background: var(--dark-2);
     }
 
-    .sponsor-label {
-      margin-bottom: 20px;
-      color: #64748b;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .12em;
+    .sponsor-panel-head {
+      padding: 10px 14px;
+      border-bottom: 2px solid #4e5663;
+      color: #8992a1;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .1em;
     }
 
     .sponsor-logos {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: #4e5663;
     }
 
     .sponsor-logo {
+      min-height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: 165px;
-      height: 72px;
-      padding: 12px 18px;
-      border-radius: 10px;
-      background: white;
+      padding: 18px;
+      background: var(--white);
     }
 
     .sponsor-logo img {
       width: auto;
-      max-width: 135px;
-      max-height: 42px;
+      max-width: 170px;
+      max-height: 50px;
       object-fit: contain;
     }
 
     .sponsor-copy {
-      margin-top: 22px;
-      color: #cbd5e1;
-      font-size: 15px;
+      padding: 20px;
+      color: #d7dbe2;
+      font-size: 14px;
     }
 
     .devchat-highlight {
-      margin-top: 18px;
-      padding: 18px 20px;
-      border-left: 3px solid #60a5fa;
+      margin-top: 22px;
+      padding: 17px 0 17px 18px;
+      border-left: 4px solid var(--lime);
     }
 
     .devchat-highlight strong {
       display: block;
-      color: white;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     .devchat-highlight span {
       display: block;
       margin-top: 5px;
-      color: #94a3b8;
-      font-size: 13px;
-    }
-
-    /* Devchat 사진도 전체 보이도록 수정 */
-    .devchat-photo {
-      overflow: hidden;
-      border-radius: 18px;
-      background: #161b22;
-    }
-
-    .devchat-photo-image {
-      min-height: 420px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      background: #111827;
-    }
-
-    .devchat-photo-image img {
-      width: 100%;
-      height: 100%;
-      max-height: 520px;
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .photo-caption {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 14px 17px;
-      color: #94a3b8;
+      color: #9ea6b2;
       font-size: 12px;
     }
 
-    .photo-caption strong {
-      color: #e2e8f0;
+    .devchat-photo {
+      border: 2px solid #545b66;
+      background: #0b0e13;
     }
 
-    /* CAREER */
-
-    .career-grid {
-      margin-top: 55px;
-      border-top: 1px solid #d1d5db;
+    .devchat-photo-inner {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
     }
 
-    .career-item {
+    .devchat-photo-inner img {
+      width: 100%;
+      max-height: 560px;
+      object-fit: contain;
+    }
+
+    .devchat-caption {
+      display: flex;
+      justify-content: space-between;
+      padding: 13px 16px;
+      border-top: 2px solid #545b66;
+      color: #aab0ba;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 10px;
+    }
+
+    .devchat-caption strong {
+      color: var(--lime);
+    }
+
+    /* ========================================
+       CAREER TRACK
+    ======================================== */
+
+    .career-header {
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 70px;
-      padding: 55px 0;
-      border-bottom: 1px solid #d1d5db;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 50px;
+      align-items: end;
+      margin-bottom: 46px;
     }
 
-    .career-meta strong {
-      display: block;
-      font-size: 18px;
-      line-height: 1.4;
+    .career-track {
+      border-top: 3px solid var(--line);
     }
 
-    .career-meta > span {
-      display: block;
-      margin-top: 5px;
-      color: #6b7280;
-      font-size: 13px;
+    .career-row {
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      border-bottom: 3px solid var(--line);
+      background: var(--paper);
+    }
+
+    .career-left {
+      padding: 34px 26px;
+      border-right: 3px solid var(--line);
+    }
+
+    .career-year {
+      color: var(--blue);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .career-left h3 {
+      margin-top: 10px;
+      font-size: 21px;
+      line-height: 1.3;
     }
 
     .career-role {
-      margin-top: 18px;
-      color: #2563eb;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .university-list {
+      margin-top: 24px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .university-list div {
+      padding-left: 12px;
+      border-left: 3px solid var(--blue);
+    }
+
+    .university-list span {
+      display: block;
+      color: var(--muted);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 9px;
+    }
+
+    .university-list strong {
+      font-size: 12px;
+    }
+
+    .career-right {
+      padding: 34px 38px 38px;
+    }
+
+    .career-right > h3 {
+      font-size: 24px;
+      letter-spacing: -.03em;
+    }
+
+    .career-right > p {
+      max-width: 760px;
+      margin-top: 12px;
+      color: var(--muted);
       font-size: 14px;
-      line-height: 1.5;
-      font-weight: 700;
-    }
-
-    .career-content h3 {
-      font-size: 25px;
-      line-height: 1.4;
-      letter-spacing: -.025em;
-    }
-
-    .career-content > p {
-      max-width: 780px;
-      margin-top: 13px;
-      color: #6b7280;
-      font-size: 16px;
     }
 
     .career-stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      margin-top: 30px;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      background: #e5e7eb;
+      margin-top: 26px;
+      border: 2px solid var(--line);
     }
 
-    .career-stats-three {
+    .career-stats.three {
       grid-template-columns: repeat(3, 1fr);
     }
 
     .career-stat {
-      min-height: 110px;
-      padding: 21px 18px;
-      background: #f8fafc;
+      min-height: 100px;
+      padding: 18px;
+      border-right: 2px solid var(--line);
+      background: var(--soft);
+    }
+
+    .career-stat:last-child {
+      border-right: 0;
     }
 
     .career-stat strong {
       display: block;
-      color: #2563eb;
-      font-size: 27px;
-      line-height: 1.1;
-      letter-spacing: -.03em;
+      color: var(--blue);
+      font-size: 26px;
+      line-height: 1;
     }
 
     .career-stat span {
       display: block;
       margin-top: 8px;
-      color: #6b7280;
-      font-size: 12px;
-      line-height: 1.45;
+      color: var(--muted);
+      font-size: 10px;
     }
 
     .career-list {
       display: grid;
-      gap: 8px;
-      margin-top: 27px;
-      padding-left: 20px;
-      color: #4b5563;
-      font-size: 14px;
+      gap: 6px;
+      margin-top: 22px;
+      padding-left: 18px;
+      font-size: 13px;
+      color: #4b4b4b;
     }
 
-    .career-list li::marker {
-      color: #2563eb;
-    }
-
-    .university-timeline {
-      display: grid;
-      gap: 18px;
-      margin-top: 32px;
-      padding-left: 17px;
-      border-left: 2px solid #dbeafe;
-    }
-
-    .university-item {
-      position: relative;
-    }
-
-    .university-item::before {
-      content: "";
-      position: absolute;
-      top: 8px;
-      left: -22px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #2563eb;
-    }
-
-    .university-item strong {
-      display: block;
-      margin-top: 2px;
-      color: #374151;
-      font-size: 14px;
-    }
-
-    .university-year {
-      display: block;
-      color: #9ca3af;
-      font-size: 11px;
-      font-weight: 600;
-    }
-
-    /* CONTACT */
+    /* ========================================
+       CONTACT
+    ======================================== */
 
     .contact {
-      background: #eff6ff;
+      background: var(--lime);
+      border-top: 3px solid var(--line);
     }
 
-    .contact-grid {
+    .contact-layout {
       display: grid;
       grid-template-columns: .8fr 1.2fr;
-      gap: 90px;
-      align-items: start;
+      border: 3px solid var(--line);
+      background: var(--paper);
+      box-shadow: 10px 10px 0 var(--ink);
     }
 
-    .contact h2 {
-      margin-top: 12px;
-      font-size: clamp(38px, 4.5vw, 58px);
-      line-height: 1.2;
-      letter-spacing: -.045em;
+    .contact-info {
+      padding: 48px 42px;
+      border-right: 3px solid var(--line);
+      background:
+        linear-gradient(rgba(17,17,17,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,17,17,.05) 1px, transparent 1px),
+        var(--paper);
+      background-size: 24px 24px;
     }
 
-    .contact-copy {
-      margin-top: 20px;
-      color: #4b5563;
-      font-size: 17px;
+    .contact-info h2 {
+      margin-top: 18px;
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: 1;
+      letter-spacing: -.055em;
+    }
+
+    .contact-info p {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .contact-callout {
+      margin-top: 30px;
+      padding: 16px;
+      border: 2px solid var(--line);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 800;
     }
 
     .contact-form {
       padding: 38px;
-      border-radius: 18px;
-      background: white;
-      box-shadow: 0 20px 60px rgba(30,64,175,.08);
+    }
+
+    .form-title {
+      margin-bottom: 25px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
     }
 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
     }
 
     .form-group {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 7px;
-      color: #374151;
-      font-size: 13px;
-      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 11px;
+      font-weight: 850;
     }
 
     .form-group input,
-    .form-group textarea,
-    .form-group select {
+    .form-group select,
+    .form-group textarea {
       width: 100%;
       padding: 13px 14px;
-      border: 1px solid #d1d5db;
-      border-radius: 9px;
-      background: white;
-      color: #111827;
+      border: 2px solid var(--line);
+      border-radius: 0;
       outline: none;
+      background: var(--white);
+      color: var(--ink);
     }
 
     .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37,99,235,.09);
+    .form-group select:focus,
+    .form-group textarea:focus {
+      box-shadow: 4px 4px 0 var(--blue);
     }
 
     .form-group textarea {
-      min-height: 170px;
+      min-height: 150px;
       resize: vertical;
     }
 
-    .submit-button {
+    .submit {
       width: 100%;
       min-height: 54px;
-      border: 0;
-      border-radius: 9px;
-      background: #2563eb;
-      color: white;
-      font-weight: 800;
+      border: 2px solid var(--line);
+      background: var(--ink);
+      color: var(--white);
+      font-weight: 900;
       cursor: pointer;
     }
 
-    .submit-button:hover {
-      background: #1d4ed8;
+    .submit:hover {
+      background: var(--blue);
     }
 
     .form-note {
-      margin-top: 12px;
-      color: #9ca3af;
-      font-size: 12px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 10px;
     }
 
-    /* FOOTER */
+    /* ========================================
+       FOOTER
+    ======================================== */
 
     footer {
-      padding: 30px 0;
-      border-top: 1px solid #e5e7eb;
-      color: #6b7280;
-      font-size: 13px;
+      background: var(--ink);
+      color: var(--white);
+      border-top: 2px solid var(--line);
     }
 
     .footer-inner {
+      min-height: 72px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 20px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 10px;
     }
 
-    /* MOBILE */
+    .footer-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--lime);
+    }
+
+    /* ========================================
+       MOBILE
+    ======================================== */
 
     @media (max-width: 900px) {
       .nav-links a:not(.nav-contact) {
         display: none;
       }
 
-      .hero {
-        padding: 85px 0 75px;
+      .hero-body {
+        grid-template-columns: 1fr;
       }
 
-      .impact-grid {
+      .hero-main {
+        border-right: 0;
+        border-bottom: 2px solid var(--line);
+      }
+
+      .hero-side {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
       }
 
-      .impact-item:nth-child(2) {
+      .hero-data {
+        border-right: 2px solid var(--line);
+      }
+
+      .hero-data:nth-child(2n) {
         border-right: 0;
       }
 
-      .impact-item:nth-child(-n+2) {
-        border-bottom: 1px solid #d1d5db;
-      }
-
-      .about-grid,
-      .education-intro,
-      .devchat-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .portfolio-grid {
+      .about-layout,
+      .education-head,
+      .devchat-layout,
+      .career-header,
+      .contact-layout {
         grid-template-columns: 1fr;
       }
 
-      .portfolio-image {
-        height: 420px;
+      .log-grid,
+      .module-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .program-grid {
+      .career-row {
         grid-template-columns: 1fr;
       }
 
-      .career-item {
-        grid-template-columns: 1fr;
-        gap: 30px;
+      .career-left {
+        border-right: 0;
+        border-bottom: 3px solid var(--line);
       }
 
       .career-stats,
-      .career-stats-three {
+      .career-stats.three {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .speaking-head {
-        display: block;
+      .career-stat:nth-child(2n) {
+        border-right: 0;
       }
 
-      .university-timeline {
-        max-width: 320px;
-      }
-
-      .devchat-photo-image {
-        min-height: 350px;
+      .contact-info {
+        border-right: 0;
+        border-bottom: 3px solid var(--line);
       }
     }
 
     @media (max-width: 600px) {
       .container {
-        width: min(100% - 30px, 1180px);
+        width: min(100% - 24px, 1180px);
       }
 
       .section {
-        padding: 75px 0;
+        padding: 76px 0;
+      }
+
+      .hero {
+        padding: 34px 0;
+      }
+
+      .hero-topbar {
+        padding: 11px 12px;
+      }
+
+      .hero-topbar-right {
+        display: none;
+      }
+
+      .hero-main {
+        padding: 40px 24px;
       }
 
       .hero h1 {
-        font-size: 43px;
+        font-size: 50px;
       }
 
       .hero-copy {
-        font-size: 17px;
+        font-size: 16px;
       }
 
-      .impact-item {
-        padding: 30px 18px;
+      .hero-side {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .impact-number {
-        font-size: 34px;
+      .hero-data {
+        padding: 18px 15px;
       }
 
-      .expertise-list {
+      .hero-data strong {
+        font-size: 27px;
+      }
+
+      .about-modules,
+      .log-grid,
+      .module-grid {
         grid-template-columns: 1fr;
       }
 
-      .portfolio-image {
-        height: 330px;
-        padding: 10px;
+      .about-module {
+        border-right: 0;
+        border-bottom: 2px solid var(--line) !important;
+      }
+
+      .about-module:last-child {
+        border-bottom: 0 !important;
+      }
+
+      .log-image {
+        height: 310px;
+      }
+
+      .combine-box {
+        grid-template-columns: 1fr;
+      }
+
+      .sponsor-logos {
+        grid-template-columns: 1fr;
+      }
+
+      .devchat-photo-inner {
+        min-height: 280px;
+      }
+
+      .career-right {
+        padding: 28px 22px;
       }
 
       .career-stats,
-      .career-stats-three {
+      .career-stats.three {
         grid-template-columns: 1fr 1fr;
       }
 
       .career-stat {
-        min-height: 100px;
-      }
-
-      .career-content h3 {
-        font-size: 22px;
+        border-bottom: 2px solid var(--line);
       }
 
       .form-row {
@@ -1024,17 +1294,14 @@
         gap: 0;
       }
 
+      .contact-info,
       .contact-form {
-        padding: 25px;
+        padding: 30px 22px;
       }
 
       .footer-inner {
-        display: block;
-      }
-
-      .devchat-photo-image {
-        min-height: 280px;
-        padding: 10px;
+        padding: 18px 0;
+        display: grid;
       }
     }
   </style>
@@ -1045,20 +1312,19 @@
   <!-- NAV -->
   <div class="nav-wrap">
     <div class="container nav">
-
       <a class="brand" href="#top">
+        <span class="brand-mark">KH</span>
         Kate Hwang
       </a>
 
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#speaking">강연</a>
-        <a href="#education">교육 분야</a>
-        <a href="#devchat">Devchat</a>
-        <a href="#career">경력</a>
-        <a href="#contact" class="nav-contact">강의 문의</a>
+        <a href="#about">ABOUT</a>
+        <a href="#speaking">SPEAKING</a>
+        <a href="#education">PROGRAMS</a>
+        <a href="#devchat">COMMUNITY</a>
+        <a href="#career">CAREER</a>
+        <a href="#contact" class="nav-contact">강의 문의 →</a>
       </div>
-
     </div>
   </div>
 
@@ -1067,94 +1333,122 @@
   <header class="hero" id="top">
     <div class="container">
 
-      <p class="eyebrow">
-        AI CAREER · TECH EDUCATION · DIGITAL LEARNING
-      </p>
+      <div class="hero-ticket">
 
-      <h1>
-        AI 시대의<br>
-        <span>진로와 직무</span>를 교육합니다.
-      </h1>
+        <div class="hero-topbar">
+          <div class="hero-topbar-left mono">
+            AI CAREER LAB · KATE HWANG
+          </div>
 
-      <p class="hero-copy">
-        테크 채용과 커리어 교육 현장에서 쌓은 경험을 바탕으로
-        AI와 기술의 변화가 실제 진로와 일에 어떤 영향을 주는지
-        쉽게 풀어 전달합니다.
-      </p>
+          <div class="hero-topbar-right mono">
+            CAREER × AI × TECH × EDUCATION · 2026
+          </div>
+        </div>
 
-      <p class="hero-subcopy">
-        초·중·고등학생부터 대학생, 취업준비생, 개발자,
-        방과후 교사까지 대상에 맞는 교육을 진행합니다.
-      </p>
+        <div class="hero-body">
 
-      <div class="hero-buttons">
+          <div class="hero-main">
 
-        <a href="#contact" class="button button-primary">
-          강의·교육 문의
-        </a>
+            <div class="hero-code">
+              FIELD 01 · AI CAREER EDUCATION
+            </div>
 
-        <a href="#speaking" class="button button-secondary">
-          강연 포트폴리오 보기
-        </a>
+            <h1>
+              AI 시대의<br>
+              <span>진로와 직무</span>를<br>
+              교육합니다.
+            </h1>
 
-      </div>
+            <p class="hero-copy">
+              테크 채용과 커리어 교육 현장에서 쌓은 경험을 바탕으로
+              AI와 기술의 변화가 실제 진로와 일에 어떤 영향을 주는지
+              쉽게 풀어 전달합니다.
+            </p>
 
-      <div class="hero-tags">
-        <span>AI 진로교육</span>
-        <span>Tech Career</span>
-        <span>생성형 AI</span>
-        <span>Python</span>
-        <span>블록코딩</span>
-        <span>로봇·드론</span>
-        <span>개발자 커리어</span>
+            <p class="hero-subcopy">
+              AI 시대의 진로·직무 변화와 개발자·이공계 커리어를 중심으로,
+              실제 채용 현장 경험을 담은 교육을 진행합니다.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#contact" class="btn btn-primary">
+                강의·교육 문의 →
+              </a>
+
+              <a href="#speaking" class="btn btn-secondary">
+                FIELD LOG 보기
+              </a>
+            </div>
+
+          </div>
+
+
+          <div class="hero-side">
+
+            <div class="hero-data">
+              <span class="hero-data-label">DATA 01</span>
+              <strong>10yr+</strong>
+              <span>진로·취업·교육 현장 경험</span>
+            </div>
+
+            <div class="hero-data highlight">
+              <span class="hero-data-label">DATA 02</span>
+              <strong>3,000+</strong>
+              <span>Career Coaching</span>
+            </div>
+
+            <div class="hero-data">
+              <span class="hero-data-label">DATA 03</span>
+              <strong>500+</strong>
+              <span>최대 오프라인 강의 규모</span>
+            </div>
+
+            <div class="hero-data highlight">
+              <span class="hero-data-label">DATA 04</span>
+              <strong>280+</strong>
+              <span>Tech Candidate Interviews</span>
+            </div>
+
+          </div>
+
+        </div>
       </div>
 
     </div>
   </header>
 
 
-  <!-- IMPACT -->
-  <section>
-    <div class="container impact-grid">
-
-      <div class="impact-item">
-        <span class="impact-number">3,000+</span>
-        <span class="impact-label">Career Coaching</span>
-      </div>
-
-      <div class="impact-item">
-        <span class="impact-number">500+</span>
-        <span class="impact-label">최대 오프라인 강의 규모</span>
-      </div>
-
-      <div class="impact-item">
-        <span class="impact-number">280+</span>
-        <span class="impact-label">Tech Candidate Interviews</span>
-      </div>
-
-      <div class="impact-item">
-        <span class="impact-number">10yr+</span>
-        <span class="impact-label">진로·취업·교육 현장 경험</span>
-      </div>
-
+  <!-- TRACK -->
+  <div class="track-wrap">
+    <div class="container track">
+      <span>UNIVERSITY CAREER</span>
+      <span>DEVELOPER COACHING</span>
+      <span>TECH RECRUITING</span>
+      <span>AI CAREER EDUCATION</span>
+      <span>COMMUNITY</span>
     </div>
-  </section>
+  </div>
 
 
   <!-- ABOUT -->
   <section class="section" id="about">
-    <div class="container about-grid">
+    <div class="container about-layout">
 
       <div>
 
-        <p class="section-kicker">
-          ABOUT
+        <p class="kicker">
+          ABOUT · POSITIONING
         </p>
 
         <h2 class="section-title">
           채용 현장의 경험을<br>
-          교육으로 연결합니다.
+          AI 진로·직무 교육으로<br>
+          연결합니다.
         </h2>
+
+        <div class="about-stamp">
+          CAREER → TECH → AI EDUCATION
+        </div>
 
       </div>
 
@@ -1162,44 +1456,58 @@
       <div class="about-copy">
 
         <p>
-          대학교 진로취업센터, 개발자 부트캠프,
-          글로벌 서치펌에서 이공계 학생과 개발자의
-          진로와 취업을 가까이에서 다뤄왔습니다.
+          10년 이상 진로·취업 교육과 테크 커리어 현장에서 일해왔습니다.
+          대학에서는 이공계 학생의 진로와 취업을 교육했고,
+          개발자 부트캠프에서는 개발자의 커리어를 코칭했으며,
+          글로벌 서치펌에서는 직접 테크 인재를 발굴하고 채용했습니다.
         </p>
 
         <p>
-          개발자를 직접 채용하고 수많은 이력서와 인터뷰를 검토한 경험을 바탕으로
-          실제 채용 현장에서 어떤 역량을 보고 어떻게 평가하는지를
-          교육에 담고 있습니다.
+          교육하는 사람과 채용하는 사람의 입장을 모두 경험하면서,
+          <strong>
+            기술이 바뀌면 직무가 어떻게 달라지고
+            기업이 원하는 역량은 어떻게 변하는지
+          </strong>
+          를 가까이에서 봐왔습니다.
         </p>
 
         <p>
-          최근에는 AI로 달라지는 직업과 채용 시장,
-          생성형 AI 활용, Python과 블록코딩,
-          로봇·드론을 활용한 디지털 교육까지
-          교육 분야를 넓혀가고 있습니다.
+          이 경험을 바탕으로 지금은
+          <strong>
+            AI 시대의 진로와 직무 변화, 개발자·이공계 커리어,
+            생성형 AI와 코딩을 연결한 교육
+          </strong>
+          을 하고 있습니다.
+          단순히 AI 도구 사용법을 알려주는 것보다,
+          새로운 기술을 자신의 진로와 일에 어떻게 활용할지
+          이해하고 직접 경험할 수 있는 교육을 만들고 있습니다.
         </p>
 
-        <div class="expertise-list">
 
-          <div class="expertise">
-            <strong>AI & Career</strong>
-            <span>AI 시대 직업 변화와 진로 탐색</span>
+        <div class="about-modules">
+
+          <div class="about-module">
+            <span class="num">01</span>
+            <h3>AI & Career</h3>
+            <p>AI 시대 직업 변화와 진로 탐색</p>
           </div>
 
-          <div class="expertise">
-            <strong>Tech Career</strong>
-            <span>개발자·이공계 취업과 채용 트렌드</span>
+          <div class="about-module">
+            <span class="num">02</span>
+            <h3>Tech Career</h3>
+            <p>개발자·이공계 취업과 채용 트렌드</p>
           </div>
 
-          <div class="expertise">
-            <strong>AI & Coding</strong>
-            <span>생성형 AI·Python·블록코딩</span>
+          <div class="about-module">
+            <span class="num">03</span>
+            <h3>AI & Coding</h3>
+            <p>생성형 AI · Python · 블록코딩</p>
           </div>
 
-          <div class="expertise">
-            <strong>Digital Learning</strong>
-            <span>로봇·드론을 활용한 체험형 교육</span>
+          <div class="about-module">
+            <span class="num">04</span>
+            <h3>Digital Learning</h3>
+            <p>로봇 · 드론 · 피지컬 컴퓨팅</p>
           </div>
 
         </div>
@@ -1211,23 +1519,23 @@
 
 
   <!-- SPEAKING -->
-  <section class="section section-alt" id="speaking">
+  <section class="section speaking" id="speaking">
     <div class="container">
 
-      <div class="speaking-head">
+      <div class="log-header">
 
         <div>
-          <p class="section-kicker">
-            SPEAKING & EDUCATION
+          <p class="kicker">
+            FIELD LOG · SPEAKING
           </p>
 
           <h2 class="section-title">
-            강연 및 교육
+            강연 및 교육 기록
           </h2>
         </div>
 
         <p class="section-description">
-          대학, 글로벌 테크 기업, 개발자 커뮤니티 등에서
+          대학, 글로벌 테크 기업, 개발자 커뮤니티에서
           AI·Tech 커리어와 이공계 진로·취업을 주제로
           강연과 교육을 진행했습니다.
         </p>
@@ -1235,23 +1543,24 @@
       </div>
 
 
-      <div class="portfolio-grid">
+      <div class="log-grid">
 
-        <!-- GOOGLE / MICROSOFT -->
-        <article class="portfolio-card">
+        <!-- GDG / MICROSOFT -->
+        <article class="log-card">
 
-          <div class="portfolio-image">
+          <div class="log-image">
             <img
               src="images/gdg-ai-career.png"
               alt="Google Developer Group AI 커리어 강연"
             >
           </div>
 
-          <div class="portfolio-body">
+          <div class="log-content">
 
-            <p class="portfolio-label">
-              GOOGLE DEVELOPER GROUP · MICROSOFT
-            </p>
+            <div class="log-meta">
+              <span>FIELD LOG 01</span>
+              <span>GOOGLE DEVELOPER GROUP · MICROSOFT</span>
+            </div>
 
             <h3>
               AI가 개발자를 대체할 수 있을까?
@@ -1263,32 +1572,32 @@
               앞으로 필요한 역량을 주제로 강연했습니다.
             </p>
 
-            <div class="portfolio-tags">
-              <span>AI Career</span>
-              <span>Developer</span>
-              <span>Tech Recruiting</span>
+            <div class="log-tags">
+              <span>AI CAREER</span>
+              <span>DEVELOPER</span>
+              <span>TECH RECRUITING</span>
             </div>
 
           </div>
-
         </article>
 
 
-        <!-- SEOUL NATIONAL UNIVERSITY -->
-        <article class="portfolio-card">
+        <!-- SNU -->
+        <article class="log-card">
 
-          <div class="portfolio-image">
+          <div class="log-image">
             <img
               src="images/snu-career.jpg"
               alt="서울대학교 개발자 커리어 강연"
             >
           </div>
 
-          <div class="portfolio-body">
+          <div class="log-content">
 
-            <p class="portfolio-label">
-              SEOUL NATIONAL UNIVERSITY
-            </p>
+            <div class="log-meta">
+              <span>FIELD LOG 02</span>
+              <span>SEOUL NATIONAL UNIVERSITY</span>
+            </div>
 
             <h3>
               개발 경험을 커리어 경쟁력으로 바꾸기
@@ -1300,32 +1609,32 @@
               커리어와 연결하는 방법을 다뤘습니다.
             </p>
 
-            <div class="portfolio-tags">
-              <span>Career Strategy</span>
-              <span>Computer Science</span>
-              <span>Portfolio</span>
+            <div class="log-tags">
+              <span>CAREER STRATEGY</span>
+              <span>COMPUTER SCIENCE</span>
+              <span>PORTFOLIO</span>
             </div>
 
           </div>
-
         </article>
 
 
         <!-- UNIVERSITY -->
-        <article class="portfolio-card">
+        <article class="log-card">
 
-          <div class="portfolio-image">
+          <div class="log-image">
             <img
               src="images/university-metaverse.jpg"
-              alt="한국공학대학교 진로취업 교육"
+              alt="대학교 진로취업 교육"
             >
           </div>
 
-          <div class="portfolio-body">
+          <div class="log-content">
 
-            <p class="portfolio-label">
-              UNIVERSITY CAREER EDUCATION
-            </p>
+            <div class="log-meta">
+              <span>FIELD LOG 03</span>
+              <span>UNIVERSITY CAREER EDUCATION</span>
+            </div>
 
             <h3>
               이공계 청년 진로·취업 교육
@@ -1337,32 +1646,32 @@
               자기소개서와 면접 교육까지 진행했습니다.
             </p>
 
-            <div class="portfolio-tags">
+            <div class="log-tags">
               <span>한국공학대학교</span>
               <span>호서대학교</span>
               <span>안산대학교</span>
             </div>
 
           </div>
-
         </article>
 
 
         <!-- DEVCHAT -->
-        <article class="portfolio-card">
+        <article class="log-card">
 
-          <div class="portfolio-image">
+          <div class="log-image">
             <img
               src="images/devchat-cio.jpg"
               alt="Devchat Night 패널 모더레이션"
             >
           </div>
 
-          <div class="portfolio-body">
+          <div class="log-content">
 
-            <p class="portfolio-label">
-              DEVCHAT KOREA
-            </p>
+            <div class="log-meta">
+              <span>FIELD LOG 04</span>
+              <span>DEVCHAT KOREA</span>
+            </div>
 
             <h3>
               개발자 커뮤니티 운영과 모더레이션
@@ -1374,34 +1683,31 @@
               패널 모더레이션을 진행했습니다.
             </p>
 
-            <div class="portfolio-tags">
-              <span>DevRel</span>
-              <span>Moderation</span>
-              <span>Community</span>
+            <div class="log-tags">
+              <span>DEVREL</span>
+              <span>MODERATION</span>
+              <span>COMMUNITY</span>
             </div>
 
           </div>
-
         </article>
 
       </div>
 
 
-      <div class="organization-box">
+      <div class="org-strip">
 
-        <p class="organization-title">
-          SPEAKING · EDUCATION · COMMUNITY
-        </p>
+        <span class="org-strip-label">
+          EXPERIENCE WITH
+        </span>
 
-        <div class="organization-list">
-          <span>Google</span>
-          <span>Microsoft</span>
-          <span>서울대학교</span>
-          <span>한국공학대학교</span>
-          <span>호서대학교</span>
-          <span>안산대학교</span>
-          <span>Devchat Korea</span>
-        </div>
+        <span>Google</span>
+        <span>Microsoft</span>
+        <span>서울대학교</span>
+        <span>한국공학대학교</span>
+        <span>호서대학교</span>
+        <span>안산대학교</span>
+        <span>Devchat Korea</span>
 
       </div>
 
@@ -1413,29 +1719,28 @@
   <section class="section" id="education">
     <div class="container">
 
-      <div class="education-intro">
+      <div class="education-head">
 
         <div>
-
-          <p class="section-kicker">
-            EDUCATION
+          <p class="kicker">
+            PROGRAM MODULES
           </p>
 
           <h2 class="section-title">
             교육 가능 분야
           </h2>
-
         </div>
 
 
         <div>
 
           <p class="section-description">
-            초·중·고등학생부터 대학생, 개발자 커뮤니티,
-            방과후 교사까지 대상에 맞는 AI·진로·직무 교육을 진행합니다.
+            AI 시대의 진로와 직무 변화부터
+            생성형 AI, 코딩, 로봇·드론까지
+            진로와 기술을 함께 경험할 수 있는 교육을 진행합니다.
           </p>
 
-          <div class="audience-tags">
+          <div class="audiences">
             <span>초등학생</span>
             <span>중학생</span>
             <span>고등학생</span>
@@ -1450,52 +1755,54 @@
       </div>
 
 
-      <div class="program-grid">
+      <div class="module-grid">
 
-        <article class="program-card">
-          <p class="program-label">AI CAREER</p>
+        <article class="module">
+          <span class="module-index">01 / 09</span>
+          <p class="module-label">AI CAREER</p>
           <h3>AI 시대 진로·직무 교육</h3>
           <p>
             AI로 직업과 일하는 방식이 어떻게 달라지고 있는지 알아보고
             자신의 관심 분야와 진로를 연결해보는 수업입니다.
           </p>
-          <div class="program-list">
-            <span>AI 시대 직업 변화</span>
-            <span>미래 직업 탐색</span>
+          <div class="module-tags">
+            <span>직업 변화</span>
+            <span>미래 직업</span>
             <span>진로 설계</span>
             <span>AI 리터러시</span>
           </div>
         </article>
 
 
-        <article class="program-card">
-          <p class="program-label">TECH CAREER</p>
+        <article class="module">
+          <span class="module-index">02 / 09</span>
+          <p class="module-label">TECH CAREER</p>
           <h3>개발자·이공계 취업 교육</h3>
           <p>
-            실제 테크 채용 현장에서 쌓은 경험을 바탕으로
+            실제 테크 채용 경험을 바탕으로
             채용 시장의 변화부터 이력서, 포트폴리오,
             면접까지 취업에 필요한 내용을 다룹니다.
           </p>
-          <div class="program-list">
+          <div class="module-tags">
             <span>채용 트렌드</span>
             <span>JD 분석</span>
             <span>이력서</span>
-            <span>포트폴리오</span>
             <span>면접</span>
           </div>
         </article>
 
 
-        <article class="program-card">
-          <p class="program-label">GENERATIVE AI</p>
+        <article class="module">
+          <span class="module-index">03 / 09</span>
+          <p class="module-label">GENERATIVE AI</p>
           <h3>생성형 AI 활용 교육</h3>
           <p>
-            ChatGPT와 생성형 AI를 직접 사용해보며
-            질문하는 방법부터 정보 확인, 아이디어 만들기,
-            문제 해결까지 경험하는 수업입니다.
+            생성형 AI를 직접 사용하며
+            질문, 정보 확인, 아이디어 만들기,
+            문제 해결까지 경험합니다.
           </p>
-          <div class="program-list">
-            <span>생성형 AI</span>
+          <div class="module-tags">
+            <span>ChatGPT</span>
             <span>프롬프트</span>
             <span>AI 윤리</span>
             <span>디지털 시민성</span>
@@ -1503,14 +1810,16 @@
         </article>
 
 
-        <article class="program-card">
-          <p class="program-label">BLOCK CODING</p>
+        <article class="module">
+          <span class="module-index">04 / 09</span>
+          <p class="module-label">BLOCK CODING</p>
           <h3>엔트리·스크래치 블록코딩</h3>
           <p>
-            처음 코딩을 접하는 학생도 직접 움직이고 결과를 확인하면서
-            알고리즘과 프로그래밍의 기본 원리를 익힐 수 있도록 진행합니다.
+            처음 코딩을 접하는 학생도
+            직접 움직이고 결과를 확인하면서
+            프로그래밍의 기본 원리를 익힙니다.
           </p>
-          <div class="program-list">
+          <div class="module-tags">
             <span>엔트리</span>
             <span>스크래치</span>
             <span>게임 만들기</span>
@@ -1519,14 +1828,15 @@
         </article>
 
 
-        <article class="program-card">
-          <p class="program-label">ROBOT CODING</p>
+        <article class="module">
+          <span class="module-index">05 / 09</span>
+          <p class="module-label">ROBOT CODING</p>
           <h3>핑퐁로봇·로봇 코딩</h3>
           <p>
-            코딩한 명령이 실제 로봇의 움직임으로 이어지는 과정을 경험하며
-            센서, 제어, 순서와 조건 같은 코딩 개념을 익히는 수업입니다.
+            코딩한 명령이 실제 로봇의 움직임으로 이어지는 과정을 통해
+            센서, 제어, 순서와 조건을 배웁니다.
           </p>
-          <div class="program-list">
+          <div class="module-tags">
             <span>핑퐁로봇</span>
             <span>로봇 제어</span>
             <span>센서</span>
@@ -1535,49 +1845,52 @@
         </article>
 
 
-        <article class="program-card">
-          <p class="program-label">DRONE</p>
+        <article class="module">
+          <span class="module-index">06 / 09</span>
+          <p class="module-label">DRONE</p>
           <h3>드론·피지컬 컴퓨팅</h3>
           <p>
-            드론과 다양한 디지털 기기를 직접 제어하며
+            드론과 디지털 기기를 직접 제어하며
             코딩이 실제 장치와 어떻게 연결되는지
-            실습을 통해 배우는 수업입니다.
+            실습을 통해 배웁니다.
           </p>
-          <div class="program-list">
+          <div class="module-tags">
             <span>드론</span>
             <span>비행 원리</span>
             <span>코딩 제어</span>
-            <span>프로젝트 수업</span>
+            <span>프로젝트</span>
           </div>
         </article>
 
 
-        <article class="program-card">
-          <p class="program-label">PYTHON</p>
+        <article class="module">
+          <span class="module-index">07 / 09</span>
+          <p class="module-label">PYTHON</p>
           <h3>Python 기초 코딩</h3>
           <p>
-            간단한 문제 해결과 게임 만들기를 통해
+            문제 해결과 간단한 게임 만들기를 통해
             변수, 조건문, 반복문, 함수 등
-            Python의 기본 개념을 익히는 수업입니다.
+            Python의 기본 개념을 익힙니다.
           </p>
-          <div class="program-list">
+          <div class="module-tags">
             <span>Python</span>
             <span>Turtle</span>
-            <span>게임 만들기</span>
+            <span>게임</span>
             <span>문제 해결</span>
           </div>
         </article>
 
 
-        <article class="program-card">
-          <p class="program-label">AI × PROJECT</p>
+        <article class="module">
+          <span class="module-index">08 / 09</span>
+          <p class="module-label">AI × PROJECT</p>
           <h3>AI 융합 프로젝트 수업</h3>
           <p>
-            환경, 진로, 과학 등 하나의 주제를 정하고
-            AI와 코딩을 함께 활용해
-            학생이 직접 결과물을 만드는 프로젝트형 수업입니다.
+            환경, 진로, 과학 등의 주제를
+            AI와 코딩으로 탐구하고
+            직접 결과물을 만드는 프로젝트 수업입니다.
           </p>
-          <div class="program-list">
+          <div class="module-tags">
             <span>PBL</span>
             <span>AI</span>
             <span>코딩</span>
@@ -1586,15 +1899,16 @@
         </article>
 
 
-        <article class="program-card">
-          <p class="program-label">TEACHER TRAINING</p>
+        <article class="module">
+          <span class="module-index">09 / 09</span>
+          <p class="module-label">TEACHER TRAINING</p>
           <h3>교사·강사 대상 AI 활용 교육</h3>
           <p>
-            방과후 교사와 교육 강사가 수업 현장에서
-            생성형 AI와 디지털 도구를 실제로 활용할 수 있도록
-            실습 중심으로 진행합니다.
+            방과후 교사와 교육 강사가
+            생성형 AI와 디지털 도구를
+            수업 현장에서 활용할 수 있도록 실습합니다.
           </p>
-          <div class="program-list">
+          <div class="module-tags">
             <span>교사 연수</span>
             <span>수업 설계</span>
             <span>생성형 AI</span>
@@ -1605,9 +1919,18 @@
       </div>
 
 
-      <div class="future-note">
-        교육 대상과 수업 시간에 따라 한 가지 주제로 진행하거나,
-        AI + 진로, AI + 코딩, AI + 로봇처럼 여러 분야를 연결한 수업으로 구성할 수 있습니다.
+      <div class="combine-box">
+
+        <div class="combine-label">
+          COMBINE
+        </div>
+
+        <div class="combine-copy">
+          한 가지 주제로 진행할 수도 있고,
+          <strong>AI + 진로 · AI + 코딩 · AI + 로봇</strong>처럼
+          여러 분야를 연결한 수업으로 구성할 수 있습니다.
+        </div>
+
       </div>
 
     </div>
@@ -1616,33 +1939,35 @@
 
   <!-- DEVCHAT -->
   <section class="section devchat" id="devchat">
-    <div class="container devchat-grid">
+    <div class="container devchat-layout">
 
       <div>
 
-        <p class="section-kicker">
-          COMMUNITY
+        <p class="kicker">
+          COMMUNITY NODE
         </p>
 
         <h2>
-          Devchat Korea
+          Devchat<br>
+          Korea
         </h2>
 
         <p class="devchat-role">
-          Organizer · Ops & Partnerships
+          ORGANIZER · OPS & PARTNERSHIPS
         </p>
 
         <p class="devchat-copy">
           한국 DevRel 커뮤니티 Devchat Korea의 운영진으로 활동하며
-          개발자와 기술 리더가 만나는 행사를 기획하고 운영하고 있습니다.
+          개발자와 기술 리더가 만나는 행사를
+          기획하고 운영하고 있습니다.
         </p>
 
 
-        <div class="sponsor-block">
+        <div class="sponsor-panel">
 
-          <p class="sponsor-label">
+          <div class="sponsor-panel-head">
             EVENT SPONSORS
-          </p>
+          </div>
 
           <div class="sponsor-logos">
 
@@ -1662,7 +1987,6 @@
 
           </div>
 
-
           <p class="sponsor-copy">
             Anthropic과 Notion이 스폰서로 참여한
             Devchat 커뮤니티 행사의 기획과 운영에 참여하고,
@@ -1673,15 +1997,10 @@
 
 
         <div class="devchat-highlight">
-
-          <strong>
-            Devchat Night 2025 · 2026
-          </strong>
-
+          <strong>Devchat Night 2025 · 2026</strong>
           <span>
             행사 기획 · 연사 및 스폰서 커뮤니케이션 · 패널 모더레이션
           </span>
-
         </div>
 
       </div>
@@ -1689,23 +2008,16 @@
 
       <div class="devchat-photo">
 
-        <div class="devchat-photo-image">
+        <div class="devchat-photo-inner">
           <img
             src="images/devchat-cio.jpg"
             alt="Devchat Night 패널 모더레이션"
           >
         </div>
 
-        <div class="photo-caption">
-
-          <strong>
-            Devchat Night
-          </strong>
-
-          <span>
-            Panel Moderator · CIO Korea
-          </span>
-
+        <div class="devchat-caption">
+          <strong>DEVCHAT NIGHT</strong>
+          <span>PANEL MODERATOR · CIO KOREA</span>
         </div>
 
       </div>
@@ -1718,44 +2030,50 @@
   <section class="section" id="career">
     <div class="container">
 
-      <p class="section-kicker">
-        EXPERIENCE
-      </p>
+      <div class="career-header">
 
-      <h2 class="section-title">
-        주요 경력
-      </h2>
+        <div>
+          <p class="kicker">
+            CAREER TRACK
+          </p>
 
-      <p class="section-description">
-        진로·취업 교육부터 개발자 커리어 코칭, 글로벌 테크 채용까지
-        사람의 커리어와 채용 시장을 가까이에서 경험해 왔습니다.
-      </p>
+          <h2 class="section-title">
+            주요 경력
+          </h2>
+        </div>
+
+        <p class="section-description">
+          대학 진로교육에서 개발자 커리어 코칭,
+          글로벌 테크 채용을 거쳐
+          AI 진로·직무 교육으로 전문성을 확장해왔습니다.
+        </p>
+
+      </div>
 
 
-      <div class="career-grid">
+      <div class="career-track">
 
         <!-- ROBERT WALTERS -->
-        <article class="career-item">
+        <article class="career-row">
 
-          <div class="career-meta">
+          <div class="career-left">
 
-            <strong>
-              Robert Walters Korea
-            </strong>
-
-            <span>
+            <span class="career-year">
               2024 — 2026
             </span>
 
-            <div class="career-role">
-              Candidate Manager,<br>
-              Technology
-            </div>
+            <h3>
+              Robert Walters Korea
+            </h3>
+
+            <p class="career-role">
+              Candidate Manager, Technology
+            </p>
 
           </div>
 
 
-          <div class="career-content">
+          <div class="career-right">
 
             <h3>
               글로벌 서치펌에서 테크 채용 프로젝트 담당
@@ -1807,26 +2125,26 @@
 
 
         <!-- CODE STATES -->
-        <article class="career-item">
+        <article class="career-row">
 
-          <div class="career-meta">
+          <div class="career-left">
 
-            <strong>
-              Code States
-            </strong>
-
-            <span>
+            <span class="career-year">
               2022 — 2023
             </span>
 
-            <div class="career-role">
+            <h3>
+              Code States
+            </h3>
+
+            <p class="career-role">
               Career Coach
-            </div>
+            </p>
 
           </div>
 
 
-          <div class="career-content">
+          <div class="career-right">
 
             <h3>
               개발자 취업과 커리어를 위한 실전 코칭
@@ -1834,13 +2152,13 @@
 
             <p>
               K-Digital Training 개발자 교육 과정에서
-              취업을 준비하는 수강생을 대상으로 이력서, 포트폴리오,
-              면접, 직무 탐색과 커리어 설계 교육을 진행했습니다.
-              개발 경험을 기업이 이해할 수 있는 언어로 정리하는 과정에 집중했습니다.
+              취업을 준비하는 수강생을 대상으로
+              이력서, 포트폴리오, 면접, 직무 탐색과
+              커리어 설계 교육을 진행했습니다.
             </p>
 
 
-            <div class="career-stats career-stats-three">
+            <div class="career-stats three">
 
               <div class="career-stat">
                 <strong>3,000+</strong>
@@ -1873,62 +2191,38 @@
 
 
         <!-- UNIVERSITY -->
-        <article class="career-item">
+        <article class="career-row">
 
-          <div class="career-meta">
+          <div class="career-left">
 
-            <strong>
-              University Career Education
-            </strong>
-
-            <span>
+            <span class="career-year">
               2016 — 2022
             </span>
 
-            <div class="career-role">
-              Career Consultant ·<br>
-              Instructor
-            </div>
+            <h3>
+              University Career Education
+            </h3>
+
+            <p class="career-role">
+              Career Consultant · Instructor
+            </p>
 
 
-            <div class="university-timeline">
+            <div class="university-list">
 
-              <div class="university-item">
-
-                <span class="university-year">
-                  2016 — 2017
-                </span>
-
-                <strong>
-                  호서대학교
-                </strong>
-
+              <div>
+                <span>2016 — 2017</span>
+                <strong>호서대학교</strong>
               </div>
 
-
-              <div class="university-item">
-
-                <span class="university-year">
-                  2017 — 2019
-                </span>
-
-                <strong>
-                  안산대학교
-                </strong>
-
+              <div>
+                <span>2017 — 2019</span>
+                <strong>안산대학교</strong>
               </div>
 
-
-              <div class="university-item">
-
-                <span class="university-year">
-                  2019 — 2022
-                </span>
-
-                <strong>
-                  한국공학대학교
-                </strong>
-
+              <div>
+                <span>2019 — 2022</span>
+                <strong>한국공학대학교</strong>
               </div>
 
             </div>
@@ -1936,7 +2230,7 @@
           </div>
 
 
-          <div class="career-content">
+          <div class="career-right">
 
             <h3>
               이공계 청년 진로·취업 교육과 대학 커리어 프로그램 운영
@@ -1976,7 +2270,7 @@
 
 
             <ul class="career-list">
-              <li>이공계 청년 대상 진로 · 취업 강의 및 상담</li>
+              <li>이공계 청년 대상 진로·취업 강의 및 상담</li>
               <li>자기소개서 · 면접 · 직무 탐색 · 취업 전략 교육</li>
               <li>기업 연계 프로그램 및 현직자 멘토링 운영</li>
               <li>한국공학대학교 채용박람회 기획·운영 주도</li>
@@ -1995,151 +2289,217 @@
 
   <!-- CONTACT -->
   <section class="section contact" id="contact">
-    <div class="container contact-grid">
+    <div class="container">
 
-      <div>
+      <div class="contact-layout">
 
-        <p class="section-kicker">
-          CONTACT
-        </p>
+        <div class="contact-info">
 
-        <h2>
-          강의·교육 문의
-        </h2>
+          <p class="kicker">
+            START A CLASS
+          </p>
 
-        <p class="contact-copy">
-          초·중·고등학교, 대학교, 교육기관,
-          개발자 커뮤니티, 교사 연수 등
-          AI 진로·직무 및 디지털 교육 문의를 받고 있습니다.
-        </p>
+          <h2>
+            강의·교육<br>
+            문의
+          </h2>
 
-        <p class="contact-copy">
-          원하는 교육 내용이 정해져 있지 않아도 괜찮습니다.
-          대상과 인원, 교육 시간을 알려주시면
-          그에 맞는 수업을 함께 정할 수 있습니다.
-        </p>
+          <p>
+            AI 진로·직무, 개발자·이공계 취업,
+            생성형 AI, 코딩·로봇·드론 교육 등
+            교육 문의를 받고 있습니다.
+          </p>
 
-      </div>
+          <p>
+            원하는 교육 내용이 정해져 있지 않아도 괜찮습니다.
+            대상과 인원, 교육 시간을 알려주시면
+            필요한 방향을 함께 정할 수 있습니다.
+          </p>
 
-
-      <form
-        class="contact-form"
-        action="https://formspree.io/f/YOUR_FORM_ID"
-        method="POST"
-      >
-
-        <input
-          type="hidden"
-          name="_subject"
-          value="[Kate Hwang 홈페이지] 새로운 강의·교육 문의"
-        >
-
-
-        <div class="form-row">
-
-          <div class="form-group">
-            <label for="name">이름 / 담당자명</label>
-
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="홍길동"
-              required
-            >
-          </div>
-
-
-          <div class="form-group">
-            <label for="organization">기관명</label>
-
-            <input
-              type="text"
-              id="organization"
-              name="organization"
-              placeholder="학교 또는 기관명"
-            >
+          <div class="contact-callout">
+            AI CAREER · TECH · CODING · ROBOT · DRONE
           </div>
 
         </div>
 
 
-        <div class="form-group">
-          <label for="email">회신받을 이메일</label>
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+        >
+
+          <p class="form-title">
+            REQUEST FORM · 01
+          </p>
 
           <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="example@email.com"
-            required
+            type="hidden"
+            name="_subject"
+            value="[Kate Hwang 홈페이지] 새로운 강의·교육 문의"
           >
-        </div>
 
 
-        <div class="form-group">
-          <label for="audience">교육 대상</label>
+          <div class="form-row">
 
-          <select
-            id="audience"
-            name="audience"
+            <div class="form-group">
+              <label for="name">
+                이름 / 담당자명
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="홍길동"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="organization">
+                기관명
+              </label>
+
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                placeholder="학교 또는 기관명"
+              >
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="email">
+              회신받을 이메일
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label for="audience">
+                교육 대상
+              </label>
+
+              <select
+                id="audience"
+                name="audience"
+              >
+                <option value="초등학생">초등학생</option>
+                <option value="중학생">중학생</option>
+                <option value="고등학생">고등학생</option>
+                <option value="대학생·취업준비생">대학생·취업준비생</option>
+                <option value="개발자">개발자</option>
+                <option value="교사·강사">교사·강사</option>
+                <option value="기타">기타</option>
+              </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="type">
+                관심 교육
+              </label>
+
+              <select
+                id="type"
+                name="type"
+              >
+                <option value="AI 진로·직무 교육">
+                  AI 진로·직무 교육
+                </option>
+
+                <option value="개발자·이공계 취업 교육">
+                  개발자·이공계 취업 교육
+                </option>
+
+                <option value="생성형 AI 교육">
+                  생성형 AI 교육
+                </option>
+
+                <option value="엔트리·스크래치 블록코딩">
+                  엔트리·스크래치 블록코딩
+                </option>
+
+                <option value="Python 교육">
+                  Python 교육
+                </option>
+
+                <option value="핑퐁로봇·로봇 코딩">
+                  핑퐁로봇·로봇 코딩
+                </option>
+
+                <option value="드론 교육">
+                  드론 교육
+                </option>
+
+                <option value="AI 융합 프로젝트">
+                  AI 융합 프로젝트
+                </option>
+
+                <option value="교사·강사 연수">
+                  교사·강사 연수
+                </option>
+
+                <option value="기타">
+                  기타
+                </option>
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="message">
+              문의 내용
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="예상 인원, 교육 시간, 일정, 원하는 내용을 자유롭게 적어주세요."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="submit"
           >
-            <option value="초등학생">초등학생</option>
-            <option value="중학생">중학생</option>
-            <option value="고등학생">고등학생</option>
-            <option value="대학생·취업준비생">대학생·취업준비생</option>
-            <option value="개발자">개발자</option>
-            <option value="교사·강사">교사·강사</option>
-            <option value="기타">기타</option>
-          </select>
-        </div>
+            REQUEST SUBMIT →
+          </button>
 
+          <p class="form-note">
+            보내주신 내용은 강의·교육 문의 확인을 위해서만 사용됩니다.
+          </p>
 
-        <div class="form-group">
-          <label for="type">관심 교육</label>
+        </form>
 
-          <select
-            id="type"
-            name="type"
-          >
-            <option value="AI 진로·직무 교육">AI 진로·직무 교육</option>
-            <option value="개발자·이공계 취업 교육">개발자·이공계 취업 교육</option>
-            <option value="생성형 AI 교육">생성형 AI 교육</option>
-            <option value="엔트리·스크래치 블록코딩">엔트리·스크래치 블록코딩</option>
-            <option value="Python 교육">Python 교육</option>
-            <option value="핑퐁로봇·로봇 코딩">핑퐁로봇·로봇 코딩</option>
-            <option value="드론 교육">드론 교육</option>
-            <option value="AI 융합 프로젝트">AI 융합 프로젝트</option>
-            <option value="교사·강사 연수">교사·강사 연수</option>
-            <option value="기타">기타</option>
-          </select>
-        </div>
-
-
-        <div class="form-group">
-          <label for="message">문의 내용</label>
-
-          <textarea
-            id="message"
-            name="message"
-            placeholder="예상 인원, 교육 시간, 일정, 원하는 내용을 자유롭게 적어주세요."
-            required
-          ></textarea>
-        </div>
-
-
-        <button
-          type="submit"
-          class="submit-button"
-        >
-          문의 보내기
-        </button>
-
-        <p class="form-note">
-          보내주신 내용은 강의·교육 문의 확인을 위해서만 사용됩니다.
-        </p>
-
-      </form>
+      </div>
 
     </div>
   </section>
@@ -2147,19 +2507,18 @@
 
   <!-- FOOTER -->
   <footer>
-
     <div class="container footer-inner">
 
       <span>
-        © 2026 Kate Hwang
+        © 2026 KATE HWANG · AI CAREER LAB
       </span>
 
-      <span>
-        AI Career · Tech Education
-      </span>
+      <div class="footer-status">
+        <span class="status-dot"></span>
+        <span>AVAILABLE FOR EDUCATION & SPEAKING</span>
+      </div>
 
     </div>
-
   </footer>
 
 </body>
